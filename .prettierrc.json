@@ -6,6 +6,7 @@
   "jsxSingleQuote": false,
   "quoteProps": "as-needed",
   "bracketSpacing": true,
+  "bracketSameLine": false,
   "tabWidth": 2,
   "useTabs": false
 }
