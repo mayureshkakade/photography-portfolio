@@ -1,3 +1,9 @@
+<p align="center">
+    <a aria-label="CI Status" href="https://github.com/mayureshkakade/photography-portfolio/actions/workflows/ci.yml">
+        <img alt="" src="https://github.com/mayureshkakade/photography-portfolio/actions/workflows/ci.yml/badge.svg">
+    </a>
+</p>
+
 # photography-portfolio
 
 Photography Portfolio Website built using NextJS supported by Typescript.
@@ -10,13 +16,13 @@ The repository uses husky pre-commit hooks for linting and checking the commit m
 1. Install below extensions in editor.
    - prettier
    - eslint
-2. ```
+2. ```bash
    #install dependencies
-   yarn install
+   $ yarn install
    ```
-3. ```
+3. ```bash
    #run development server
-   yarn dev
+   $ yarn dev
    ```
 4. Follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) while writing commit messages.
 5. Make prettier as default formatter and enable 'format on save' in the editor for easier code formatting.
