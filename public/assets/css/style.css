@@ -1,18 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap");
-/* Header h3  */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
 /* For album folders */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 /* paragraphs in client review */
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* Header and Footer */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-/* line 1, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_extend.scss */
-@import "/public/assets/fonts/CammronDemo.ttf";
-/* @import "/public/assets/fonts/Arapey-Regular.ttf"; */
-@import url("https://fonts.googleapis.com/css2?family=Arapey&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import '/public/assets/fonts/CammronDemo.ttf';
+@import url('https://fonts.googleapis.com/css2?family=Arapey&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
+@import '/public/assets/css/font-awesome.min.css';
+@import '/public/assets/css/flaticon.css';
+@import '/public/assets/css/slick.css';
+@import '/public/assets/css/slicknav.css';
 
 .owl-carousel .owl-dots.disabled,
 .owl-carousel .owl-nav.disabled {
@@ -39,7 +41,7 @@
 /* 1. Theme default css */
 /* line 5, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 body {
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-weight: normal;
   font-style: normal;
 }
@@ -97,7 +99,7 @@ h3,
 h4,
 h5 {
   /* font-family: "Cormorant Garamond, serif"; */
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   color: #1f1f1f;
 }
 
@@ -112,14 +114,14 @@ h6 a {
 }
 
 .client_review h4 {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
   color: black;
   font-weight: 600;
 }
 
 .slicknav_menu a {
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 /* line 52, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
@@ -140,13 +142,13 @@ p {
   line-height: 28px;
   color: black;
   margin-bottom: 13px;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .footer p {
   font-size: 16px;
   color: #ffffffa6;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 /* line 68, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 label {
@@ -230,21 +232,6 @@ h3 {
   background: #f5f5f5;
 }
 
-/* line 130, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
-.bg-img-1 {
-  background-image: url(../img/slider/slider-img-1.jpg);
-}
-
-/* line 133, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
-.bg-img-2 {
-  background-image: url(../img/background-img/bg-img-2.jpg);
-}
-
-/* line 136, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
-.cta-bg-1 {
-  background-image: url(../img/background-img/bg-img-3.jpg);
-}
-
 /* line 141, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 .overlay {
   position: relative;
@@ -254,7 +241,7 @@ h3 {
 /* line 145, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 .overlay::before {
   position: absolute;
-  content: "";
+  content: '';
   background-color: #1f1f1f;
   top: 0;
   left: 0;
@@ -273,7 +260,7 @@ h3 {
 /* line 161, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 .black_overlay::before {
   position: absolute;
-  content: "";
+  content: '';
   /* background-color: #2c2c2c; */
   top: 0;
   left: 0;
@@ -298,7 +285,7 @@ h3 {
   top: 0;
   background: #2c2c2c;
   opacity: 0.6;
-  content: "";
+  content: '';
   z-index: -1;
 }
 
@@ -311,7 +298,7 @@ h3 {
 /* line 194, ../../Arafath/CL/CL October/215. Photography/HTML/scss/theme-default.scss */
 .bradcam_overlay::before {
   position: absolute;
-  content: "";
+  content: '';
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#5db2ff+0,7db9e8+100&1+24,0+96 */
   background: -moz-linear-gradient(
     left,
@@ -442,7 +429,7 @@ h3 {
   color: #131313;
   display: inline-block;
   padding: 18px 44px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -479,7 +466,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 13px 28px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 400;
   border: 0;
@@ -515,7 +502,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 14px 27px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 500;
   border: 0;
@@ -554,7 +541,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 13px 27px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -600,7 +587,7 @@ h3 {
   color: #48b6fb !important;
   display: inline-block;
   padding: 14px 31px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -641,7 +628,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 18px 24px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -675,7 +662,7 @@ h3 {
 /* line 179, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_btn.scss */
 .line-button::before {
   position: absolute;
-  content: "";
+  content: '';
   background: #919191;
   width: 100%;
   height: 1px;
@@ -720,7 +707,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 13px 28px;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
   font-weight: 400;
   border: 0;
@@ -766,7 +753,7 @@ h3 {
   .section_title h3 {
     font-size: 28px;
     line-height: 36px;
-    font-family: "Playfair Display", serif;
+    font-family: 'Playfair Display', serif;
   }
 }
 
@@ -964,12 +951,12 @@ h3 {
     background: white;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../img/gallery/cover/BlackLogo.png);
+    background-image: url(../images/contact-page/BlackLogo.png);
     background-size: contain;
   }
 
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../img/logo.png);
+    background-image: url(../images/header-footer/logo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -984,11 +971,11 @@ h3 {
     background: white;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../img/gallery/cover/BlackLogo.png);
+    background-image: url(../images/contact-page/BlackLogo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../img/logo.png);
+    background-image: url(../images/header-footer/logo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1002,11 +989,11 @@ h3 {
     padding: 15px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../img/gallery/cover/BlackLogo.png);
+    background-image: url(../images/contact-page/BlackLogo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../img/logo.png);
+    background-image: url(../images/header-footer/logo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1026,11 +1013,11 @@ h3 {
     padding: 25px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../img/gallery/cover/BlackLogo.png);
+    background-image: url(../images/contact-page/BlackLogo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../img/logo.png);
+    background-image: url(../images/header-footer/logo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1050,11 +1037,11 @@ h3 {
     padding: 25px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../img/gallery/cover/BlackLogo.png);
+    background-image: url(../images/contact-page/BlackLogo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../img/logo.png);
+    background-image: url(../images/header-footer/logo.png);
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1146,7 +1133,7 @@ h3 {
 /* line 99, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu {
   text-align: end;
-  font-family: "Arapey", serif !important;
+  font-family: 'Arapey', serif !important;
   padding: 12px 0;
 }
 
@@ -1166,7 +1153,7 @@ h3 {
   display: inline-block;
   padding: 0px 0px 0px 0px;
   /* font-family: 'Arapey', serif; */
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   position: relative;
   text-transform: capitalize;
 
@@ -1432,12 +1419,12 @@ h3 {
 }
 
 /* line 1, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_slider.scss */
-.slider_bg_1 {
+/* .slider_bg_1 {
   background-image: url(../img/banner/banner1.png);
-}
+} */
 
 /* line 4, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_slider.scss */
-.slider_bg_2 {
+/* .slider_bg_2 {
   background-image: url(../img/banner/banner2.png);
 }
 .slider_bg_3 {
@@ -1463,7 +1450,7 @@ h3 {
 }
 .slider_bg_10 {
   background-image: url(../img/banner/banner10.png);
-}
+} */
 /* line 8, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_slider.scss */
 .slider_area .single_slider {
   height: 100vh;
@@ -1530,7 +1517,7 @@ h3 {
 /* line 41, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
   color: #fff;
-  font-family: "Cormorant Garamond", sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 50px;
   text-transform: capitalize;
   font-weight: 300;
@@ -1859,19 +1846,19 @@ h3 {
 }
 
 /* line 148, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_features.scss */
-.features_area .features_info ul li::before {
+/* .features_area .features_info ul li::before {
   position: absolute;
   left: 0;
   background-image: url(../img/ilstrator_img/check.svg);
   width: 16px;
   height: 16px;
-  content: "";
+  content: '';
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
+} */
 
 /* line 160, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_features.scss */
 .features_area .features_info .boxed-btn3 {
@@ -1879,13 +1866,13 @@ h3 {
 }
 
 /* line 168, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_features.scss */
-.productivity_area {
+/* .productivity_area {
   background-image: url(../img/banner/product.png);
   background-size: cover;
   background-position: center center;
   padding: 164px 0;
   background-repeat: no-repeat;
-}
+} */
 
 @media (max-width: 767px) {
   /* line 168, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_features.scss */
@@ -2067,7 +2054,7 @@ h3 {
 /* line 51, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_gallery.scss */
 .gallery_area .single_photography .hover .hover_inner h3 {
   color: #ffffff;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
   font-size: 24px;
   margin-bottom: 4px;
 }
@@ -2574,7 +2561,7 @@ h3 {
   font-size: 10px;
   text-align: center;
   letter-spacing: 4px;
-  font-family: "Arapey";
+  font-family: 'Arapey';
 }
 
 @media (max-width: 767px) {
@@ -2600,7 +2587,7 @@ h3 {
   .footer .socail_links {
     margin-top: 25px;
     text-align: center;
-    color: "#c7c7c7";
+    color: '#c7c7c7';
   }
 }
 
@@ -2634,24 +2621,24 @@ h3 {
 }
 
 /* line 1, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
-.bradcam_bg_1 {
+/* .bradcam_bg_1 {
   background-image: url(../img/banner/bradcam_bg_1.png);
-}
+} */
 
 /* line 4, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
-.breadcam_bg_2 {
+/* .breadcam_bg_2 {
   background-image: url(../img/banner/bradcam_bg_2.png);
-}
+} */
 
 /* line 7, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
-.breadcam_bg_3 {
+/* .breadcam_bg_3 {
   background-image: url(../img/banner/bradcam_bg_3.png);
-}
+} */
 
 /* line 10, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
-.breadcam_bg_4 {
+/* .breadcam_bg_4 {
   background-image: url(../img/banner/bradcam_4.png);
-}
+} */
 
 /* line 13, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
 .bradcam_area {
@@ -2795,7 +2782,7 @@ h3 {
   cursor: pointer;
   display: block;
   float: left;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: normal;
   width: 100% !important;
   /* height: 42px; */
@@ -2823,7 +2810,7 @@ h3 {
 
 /* line 154, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_bradcam.scss */
 .popup_box .nice-select::after {
-  content: "\f0d7";
+  content: '\f0d7';
   display: block;
   height: 5px;
   margin-top: -5px;
@@ -2911,7 +2898,7 @@ h3 {
 }
 .instagram_text {
   text-align: center;
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 30px;
   line-height: 32px;
   margin: 23px;
@@ -2924,7 +2911,7 @@ h3 {
 
 .instagram_text .insta_link a {
   font-weight: 400;
-  font-family: "Playfair Display", serif;
+  font-family: 'Playfair Display', serif;
 }
 
 @media (max-width: 767px) {
@@ -3324,7 +3311,7 @@ h3 {
 
 /* line 61, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_contact.scss */
 .form-contact .form-control {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   border: 1px solid #e5e6e9;
   border-radius: 0px;
   height: 48px;
@@ -3949,7 +3936,7 @@ h6 {
 
 /* line 459, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .unordered-list li:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 14px;
   height: 14px;
@@ -4198,7 +4185,7 @@ h6 {
 
 /* line 663, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .primary-switch input + label:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -4217,7 +4204,7 @@ h6 {
 
 /* line 677, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .primary-switch input + label:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 1px;
   left: 1px;
@@ -4278,7 +4265,7 @@ h6 {
 
 /* line 728, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .confirm-switch input + label:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -4297,7 +4284,7 @@ h6 {
 
 /* line 742, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .confirm-switch input + label:after {
-  content: "";
+  content: '';
   position: absolute;
   top: 1px;
   left: 1px;
@@ -4360,11 +4347,11 @@ h6 {
 }
 
 /* line 798, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.primary-checkbox input:checked + label {
+/* .primary-checkbox input:checked + label {
   background: url(../img/elements/primary-check.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 806, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .confirm-checkbox {
@@ -4403,11 +4390,11 @@ h6 {
 }
 
 /* line 835, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.confirm-checkbox input:checked + label {
+/* .confirm-checkbox input:checked + label {
   background: url(../img/elements/success-check.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 843, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .disabled-checkbox {
@@ -4452,11 +4439,11 @@ h6 {
 }
 
 /* line 876, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.disabled-checkbox input:checked + label {
+/* .disabled-checkbox input:checked + label {
   background: url(../img/elements/disabled-check.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 884, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .primary-radio {
@@ -4495,11 +4482,11 @@ h6 {
 }
 
 /* line 913, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.primary-radio input:checked + label {
+/* .primary-radio input:checked + label {
   background: url(../img/elements/primary-radio.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 921, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .confirm-radio {
@@ -4538,11 +4525,11 @@ h6 {
 }
 
 /* line 950, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.confirm-radio input:checked + label {
+/* .confirm-radio input:checked + label {
   background: url(../img/elements/success-radio.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 958, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .disabled-radio {
@@ -4587,11 +4574,11 @@ h6 {
 }
 
 /* line 991, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
-.disabled-radio input:checked + label {
+/* .disabled-radio input:checked + label {
   background: url(../img/elements/disabled-radio.png) no-repeat center
     center/cover;
   border: none;
-}
+} */
 
 /* line 999, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_elements.scss */
 .default-select {
@@ -4789,7 +4776,7 @@ h6 {
 
 /* line 36, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .single-blog .thumb:after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -4836,7 +4823,7 @@ h6 {
 
 /* line 84, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .single-blog .tag:after {
-  content: "";
+  content: '';
   position: absolute;
   width: 1px;
   height: 10px;
@@ -5050,7 +5037,7 @@ h6 {
 
 /* line 307, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .causes_item .causes_img .c_parcent span:before {
-  content: "75%";
+  content: '75%';
   position: absolute;
   right: -10px;
   bottom: 0px;
@@ -5311,7 +5298,7 @@ h6 {
 
 /* line 577, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .blog-info-link li::after {
-  content: "|";
+  content: '|';
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -5323,7 +5310,7 @@ h6 {
 
 /* line 588, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .blog-info-link::after {
-  content: "";
+  content: '';
   display: block;
   clear: both;
   display: table;
@@ -5393,7 +5380,7 @@ h6 {
 
 /* line 652, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog.scss */
 .blog_right_sidebar .widget_title::after {
-  content: "";
+  content: '';
   display: block;
   padding-top: 15px;
   border-bottom: 1px solid #f0e9ff;
@@ -6269,7 +6256,7 @@ h6 {
 /* line 86, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_blog_part.scss */
 .blog_part .single-home-blog .card .dot:after {
   position: absolute;
-  content: "";
+  content: '';
   width: 10px;
   height: 10px;
   top: 5px;

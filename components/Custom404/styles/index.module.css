@@ -1,0 +1,47 @@
+.notFoundContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/assets/images/not-found-page/404.png') #151729;
+}
+
+.notFoundContainer .notFoundContent {
+  max-width: 600px;
+  text-align: center;
+}
+
+.notFoundContainer .notFoundContent h2 {
+  font-size: 18vw;
+  color: white;
+  line-height: 1em;
+}
+
+.notFoundContainer .notFoundContent h4 {
+  font-size: 1.5em;
+  color: #111;
+  background: #fff;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.notFoundContainer .notFoundContent p {
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.notFoundContainer .notFoundContent a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 25px;
+  background: #ff0562;
+  color: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  border-radius: 25px;
+  border-bottom: 4px solid #d00d56;
+}
