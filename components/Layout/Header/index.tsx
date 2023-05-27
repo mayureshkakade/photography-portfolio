@@ -1,19 +1,21 @@
+import React, { useEffect, useState } from 'react';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+
+const brandLogo = '/assets/images/header-footer/logo.png';
 
 const Header: React.FC = () => {
-  // const headerColor =
-  // location.pathname === "/albums" || location.pathname === "/films"
-  //   ? "header-color"
-  //   : "";
+  const [isMobileView, setIsMobileView] = useState<boolean>(false);
+
+  useEffect(() => {
+    const isMobileView = window.innerWidth > 1000 ? false : true;
+    setIsMobileView(isMobileView);
+  }, []);
+
+  // TODO: Update the styles for header based on location
   const headerColor = '';
-
-  // Determine the color of logo to be used based on device width and current location
-  const logoPath = '';
-
-  // Determine if the current device is mobile to specify respective reposnsive styles
-  const isMobileView = false;
+  const logoPath = isMobileView ? '' : brandLogo;
 
   return (
     <header>
@@ -30,6 +32,7 @@ const Header: React.FC = () => {
                         src={logoPath}
                         alt="mylogo"
                         width={120}
+                        height={63}
                       />
                     ) : (
                       <div
@@ -65,7 +68,7 @@ const Header: React.FC = () => {
                         <a href="contact">Contact</a>
                       </li>
 
-                      {isMobileView ? (
+                      {!isMobileView ? (
                         <>
                           <li style={{ marginRight: '10px' }}>
                             <a
