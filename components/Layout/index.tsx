@@ -1,6 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 
 import $ from 'jquery';
+import Footer from './Footer';
 import Header from './Header';
 import Script from 'next/script';
 
@@ -15,6 +16,7 @@ const Layout: React.FC<PropsWithChildren> = ({ children }) => {
       <Script src="assets/js/main.js" strategy="lazyOnload" />
       <Header />
       {children}
+      <Footer />
     </>
   );
 };

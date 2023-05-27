@@ -10,7 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* TODO: Remove below div */}
-      <div style={{ height: '700vh' }}></div>
+      <div style={{ height: '300vh' }}></div>
     </>
   );
 }
