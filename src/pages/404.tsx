@@ -1,4 +1,4 @@
-import Custom404 from '../../components/Custom404';
+import Custom404 from '../components/Custom404';
 
 const Custom404NotFound: React.FC = () => {
   return <Custom404 />;
