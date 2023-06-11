@@ -8,13 +8,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* Header and Footer */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import '/public/assets/fonts/CammronDemo.ttf';
 @import url('https://fonts.googleapis.com/css2?family=Arapey&display=swap');
 @import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
-@import '/public/assets/css/font-awesome.min.css';
-@import '/public/assets/css/flaticon.css';
-@import '/public/assets/css/slick.css';
-@import '/public/assets/css/slicknav.css';
+@import url('./font-awesome.min.css');
+@import url('./flaticon.css');
+@import url('./slick.css');
+@import url('./slicknav.css');
 
 .owl-carousel .owl-dots.disabled,
 .owl-carousel .owl-nav.disabled {
@@ -6421,5 +6420,667 @@ h6 {
 
   .film-player {
     height: 13.9375rem !important;
+  }
+}
+
+/* OVERRIDES */
+/* Carousel styles override */
+.carousel.carousel-slider {
+  max-height: 100vh !important;
+}
+
+.carousel .thumb {
+  opacity: 0.5;
+}
+
+.carousel .thumb.selected {
+  opacity: 1;
+  border: none;
+}
+
+.carousel .thumbs-wrapper {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+/* Carousel arrows styles */
+
+.my-prev-arrow {
+  display: none;
+}
+
+.my-next-arrow {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-height: 1000px) {
+  .my-prev-arrow {
+    position: absolute;
+    top: 60%;
+    left: 6em;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+  }
+
+  .my-next-arrow {
+    position: absolute;
+    top: 60%;
+    right: 6em;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+  }
+}
+
+/* Media query for laptops and desktops */
+@media only screen and (min-width: 1280px) and (max-height: 1000px) {
+  .my-prev-arrow {
+    position: absolute;
+    top: 60%;
+    left: 6em;
+    cursor: pointer;
+    display: block;
+  }
+
+  .my-next-arrow {
+    position: absolute;
+    top: 60%;
+    right: 6em;
+    cursor: pointer;
+    display: block;
+  }
+  .contact_card {
+    bottom: 46px;
+  }
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 480px) {
+  .film-container {
+    padding: 0px 0.625rem !important;
+  }
+  .client {
+    padding-bottom: 35px !important;
+  }
+  /* Albums thumbnails styles for mobile devices */
+  .gallery_area .single_photography .hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.08+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 0%, black 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.08) 0%,
+      black 100%
+    );
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0000007a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14000000', endColorstr='#000000',GradientType=0 );
+    /* IE6-9 */
+    display: table;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 6px;
+    padding-left: 14px;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner h3 {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 4px;
+    text-shadow: -3px -1px 3px black;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner span {
+    font-weight: 300;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #d5d5d5;
+    text-shadow: -3px -1px 3px black;
+  }
+
+  .gallery_area .single_photography:hover .hover {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Responsive Header styles */
+  .slicknav_menu .slicknav_nav {
+    background: #fff;
+    float: right;
+    padding: 0;
+    border-radius: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    top: 11px;
+    height: 100vh;
+    font-size: 1.3em;
+    width: 100%;
+  }
+
+  .slicknav_nav li {
+    text-align: center;
+    padding-top: 7%;
+  }
+
+  .slicknav_nav a {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #000;
+    text-transform: capitalize;
+  }
+  .slicknav_icon-bar {
+    background-color: black !important;
+  }
+
+  /* Space between header and below content */
+  .padding_top {
+    padding-top: 85px !important;
+  }
+
+  /* Instagram images styles for mobile devices */
+  .instragram_area .single_instagram:hover .ovrelay {
+    visibility: hidden;
+  }
+  /* Setting font family in mobile devices */
+  .gallery_area .single_photography span {
+    font-family: 'Playfair Display', serif;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .client_review {
+    width: 85% !important;
+  }
+
+  .client_review {
+    padding: 0px 30px;
+  }
+  .client_review p {
+    font-family: 'Josefin Sans', sans-serif !important;
+  }
+
+  .logo {
+    padding: 0px !important;
+  }
+  .logo_img {
+    width: 110px;
+  }
+
+  .about_name {
+    text-align: center;
+  }
+
+  .about_text p {
+    padding: 0px 20px;
+  }
+
+  .about_img {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 2.2rem !important;
+    margin-bottom: 2.25rem !important;
+  }
+
+  .text_header {
+    font-size: 22px;
+  }
+
+  .text_content p {
+    font-size: 13px;
+    padding: 0px 20px;
+  }
+
+  .about_header p {
+    padding: 0px 20px;
+  }
+
+  .about_header h2 {
+    font-family: 'Playfair Display', serif !important;
+  }
+  .albums_text span {
+    font-size: 1.2em;
+    color: black;
+    font-family: 'Playfair Display', serif !important;
+  }
+
+  .albums_text h5 {
+    color: #000000a8;
+    font-size: 0.84rem;
+    font-family: 'Playfair Display', serif !important;
+  }
+  .middle_line {
+    display: none !important;
+  }
+
+  .contact_card .black_logo {
+    width: 150px !important;
+    height: auto !important;
+    margin-bottom: 23px !important;
+  }
+  .contact_card .black_logo img {
+    height: auto !important;
+  }
+  .film_text {
+    text-align: center;
+    margin-top: 110px !important;
+    font-size: 12px !important;
+    text-transform: 'uppercase';
+  }
+
+  .film_text h2 {
+    font-size: 24px !important;
+  }
+
+  .film_text p {
+    margin-top: 20px;
+    font-size: 16px !important;
+    padding: 0px 0px !important;
+  }
+
+  .film_body {
+    margin: 45px 0px !important;
+  }
+  .film_area {
+    margin-top: 50px !important;
+  }
+}
+
+/* Media query for tablet devices */
+@media only screen and (min-width: 481px) and (max-width: 991px) {
+  /* ContactUs info details */
+  .media_tablet {
+    display: inline-flex;
+  }
+  .film-player {
+    height: 27.9375rem !important;
+  }
+
+  /* Album thumbnail styles for tablets */
+  .gallery_area .single_photography .hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.08+0,1+100 */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.08) 0%, black 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.08) 0%,
+      black 100%
+    );
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #0000007a 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#14000000', endColorstr='#000000',GradientType=0 );
+    /* IE6-9 */
+    display: table;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 6px;
+    padding-left: 14px;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner h3 {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 1em;
+    margin-bottom: 4px;
+    text-shadow: -3px -1px 3px black;
+  }
+
+  .gallery_area .single_photography .hover .hover_inner span {
+    font-weight: 300;
+    font-size: 0.8em;
+    font-style: italic;
+    color: #d5d5d5;
+    text-shadow: -3px -1px 3px black;
+  }
+
+  .gallery_area .single_photography:hover .hover {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Header styles for tablets */
+  .slicknav_menu .slicknav_nav {
+    background: #fff;
+    float: right;
+    margin-top: 0;
+    padding: 0;
+    width: 95%;
+    padding: 0;
+    border-radius: 0px;
+    margin-top: 5px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0px;
+    top: 11px;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .slicknav_nav li {
+    text-align: center;
+    padding-top: 7%;
+  }
+
+  .slicknav_nav a {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #000;
+    text-transform: capitalize;
+  }
+
+  .mobile_menu {
+    position: absolute;
+    right: 0px;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .slicknav_icon-bar {
+    background-color: black !important;
+  }
+
+  /* Space between header and below content */
+  .padding_top {
+    padding-top: 86px !important;
+  }
+
+  /* Footer contact styles */
+  .about-text {
+    padding-left: 2% !important;
+  }
+
+  .about_header h2 {
+    font-family: 'Playfair Display', serif !important;
+  }
+  .contact-text {
+    padding-left: 0% !important;
+  }
+  /* Font family in tablet devices */
+  .gallery_area .single_photography span {
+    font-family: 'Playfair Display', serif;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .client_review {
+    width: 75% !important;
+  }
+
+  .client_review p {
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .instragram_area .single_instagram {
+    padding: 8px;
+  }
+
+  .instragram_area {
+    margin: 0px 5em;
+  }
+
+  .film-container {
+    padding: 0px 0.625rem !important;
+  }
+
+  .about_img {
+    height: auto !important;
+    margin: 40px 0px !important;
+  }
+
+  .about_name {
+    text-align: center;
+  }
+
+  .albums_text span {
+    font-size: 1.2em;
+    color: black;
+    font-family: 'Playfair Display', serif !important;
+  }
+
+  .albums_text h5 {
+    color: #000000a8;
+    font-size: 0.84rem;
+    font-family: 'Playfair Display', serif !important;
+  }
+  .middle_line {
+    display: none !important;
+  }
+}
+
+/* Styles for LightBox */
+.ril__toolbar {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+@media only screen and (min-width: 1200px) {
+  .film-player {
+    height: 40.9375rem !important;
+  }
+  .client_review {
+    width: 64% !important;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .film-player {
+    height: 42rem !important;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .film-player {
+    height: 47rem !important;
+  }
+  .client_review {
+    width: 60% !important;
+  }
+}
+
+.client_review {
+  width: 65%;
+}
+
+.client_review p {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.about_name {
+  font-family: 'Playfair Display', serif !important;
+  font-weight: 700;
+  /* font-size: 29px; */
+  font-size: 1.6875rem;
+  letter-spacing: 0.2em;
+  word-spacing: 0em;
+  line-height: 1.34em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.about_text p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  margin-bottom: 22px;
+}
+
+.about_header p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+}
+
+.text_header {
+  text-align: center;
+  padding-bottom: 10px !important;
+}
+
+.text_content p {
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 16px;
+}
+
+.about_header h2 {
+  font-family: 'Playfair Display', serif !important;
+}
+
+.media-body h3,
+.media-body p {
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.client_review p {
+  font-family: 'Josefin Sans', sans-serif;
+}
+.albums_text span {
+  font-size: 1.4em;
+  color: black;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.albums_text h5 {
+  color: #000000a8;
+  font-size: 0.84rem;
+  font-family: 'Playfair Display', serif !important;
+}
+
+.film-container {
+  padding: 0 7.625rem;
+}
+
+.film {
+  padding: 0px;
+}
+
+.about_img {
+  padding: 0 8.8rem;
+}
+.film_text {
+  margin-top: 150px;
+}
+
+.film_text h2 {
+  text-align: center;
+  font-size: 28px;
+}
+
+.film_text p {
+  padding: 20px 100px;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.film_body {
+  margin: 60px 0px;
+}
+
+.film_area {
+  margin-top: 80px;
+}
+
+.client {
+  padding-bottom: 35px;
+}
+
+.film-player {
+  height: 34.9375rem;
+}
+
+.about_img {
+  height: 25.6125rem;
+}
+
+/*media query for ipadpro*/
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (min-height: 1024px) {
+  .about_img {
+    padding: 0px 4.8rem !important;
+    height: 31rem !important;
+  }
+  .client_review {
+    width: 70% !important;
+  }
+  .film-container {
+    padding: 0 2.625rem !important;
+  }
+}
+
+/*media query for ipadpro landscape*/
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (min-height: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .about_img {
+    padding: 0px 8.8rem !important;
+    height: 26rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .client_review {
+    width: 70% !important;
+  }
+
+  .about_img {
+    height: auto !important;
+    padding: 0 4.8rem !important;
   }
 }
