@@ -87,9 +87,6 @@ export const Carousel: FC = () => {
           );
         })}
       </ResponsiveCarousel>
-
-      {/* TODO: Add a skeleton loader component below */}
-      {/* {isLoading && <HomeCarouselSkeleton />} */}
     </div>
   );
 };
