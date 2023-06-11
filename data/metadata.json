@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "album-1",
+    "displayName": "Ruchika & Nikhil",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-1/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 22
+  },
+  {
+    "id": 2,
+    "name": "album-2",
+    "displayName": "Shalaka & Prasad",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-2/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 28
+  },
+  {
+    "id": 3,
+    "name": "album-3",
+    "displayName": "Nikhil & Titeeksha",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-3/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 37
+  },
+  {
+    "id": 4,
+    "name": "album-4",
+    "displayName": "Harsha & Karthik",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-4/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 36
+  },
+  {
+    "id": 5,
+    "name": "album-5",
+    "displayName": "Hitesh & Shweta",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-5/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 25
+  },
+  {
+    "id": 6,
+    "name": "album-6",
+    "displayName": "Portfolio",
+    "thumbnail": "assets/images/albums-page/featured-albums/album-6/thumbnail/lazy-thumbnail/thumb.jpg",
+    "count": 51
+  }
+]
