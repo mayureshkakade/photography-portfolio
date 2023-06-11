@@ -77,7 +77,7 @@ export const Carousel: FC = () => {
           return (
             <div key={item.id}>
               <Image
-                alt="home page banner"
+                alt="Wedding Photograph"
                 src={item.image}
                 width={1000}
                 height={1000}
