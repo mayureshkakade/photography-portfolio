@@ -4,7 +4,7 @@ import { pageDescription, pageTitle } from '@/constants';
 
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import Layout from '../../components/Layout';
+import Layout from '../components/Layout';
 import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
