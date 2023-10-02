@@ -1,7 +1,9 @@
+import { Heading, Info } from './Text';
+
 import { Albums } from './Albums';
 import { Carousel } from './Carousel';
 import { FC } from 'react';
-import { Heading } from './Heading';
+import FilmPlayer from './FilmPlayer';
 
 const Home: FC = () => {
   return (
@@ -9,6 +11,8 @@ const Home: FC = () => {
       <Carousel />;
       <Heading />
       <Albums />
+      <Info />
+      <FilmPlayer />
     </>
   );
 };
