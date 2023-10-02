@@ -9,3 +9,7 @@ export const getCarouselImages = () => {
     };
   });
 };
+
+export const getAlbums = () => {
+  return appData.albums.slice(0, 4);
+};
