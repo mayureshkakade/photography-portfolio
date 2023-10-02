@@ -9,3 +9,5 @@ export const pageDescription = `Welcome to Omkar Kalgude Photography & Films. We
       stories across the country. We are a passionate, creative, and
       an incredibly motivated team. It will be our pleasure to be a
       part of your beautiful journey.`;
+
+export const homePageTagLine = `Because every couple is special and so is their story`;
