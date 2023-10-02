@@ -1,5 +1,7 @@
 import { FC } from 'react';
+import Image from 'next/image';
 import { homePageTagLine } from '@/constants';
+import { testimonials } from '../../../../data/metadata.json';
 
 export const Heading: FC = () => {
   return (
@@ -39,6 +41,48 @@ export const Info: FC = () => {
             big day is full of cherishable memories and it deserves to be
             captured in its full essence.
           </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Testimonial: FC<{ author: string; testimonial: string }> = ({
+  author,
+  testimonial,
+}) => (
+  <div className="col-xl-6 col-md-6">
+    <Image
+      alt="line-decorator"
+      src="/assets/images/home-page/line.png"
+      width={1000}
+      height={1000}
+      style={{ width: '100%', height: 'auto' }}
+    />
+    <p className="mt2" style={{ fontSize: '14px', textAlign: 'justify' }}>
+      {testimonial}
+    </p>
+    <h4>{author}</h4>
+  </div>
+);
+
+export const Testimonials: FC = () => {
+  return (
+    <div
+      className="client"
+      style={{
+        textAlign: 'center',
+        paddingTop: ' 35px',
+      }}
+    >
+      <h2>OUR CLIENTS LOVE US</h2>
+      <div>
+        <div className="container client_review">
+          <div className="row align-items-center">
+            {testimonials.map(({ author, id, testimonial }) => (
+              <Testimonial key={id} author={author} testimonial={testimonial} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
