@@ -48,5 +48,17 @@
       "totalImages": 5,
       "baseDir": "/assets/images/home-page/carousel/"
     }
-  }
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "author": "Aanchal & Kshitij",
+      "testimonial": "I would like to say a huge thank you to team Photu Phactory for such a superb service. From the moment you arrived at the venue to the final stages of producing our amazing album – you exceeded our expectations. The photos are absolutely stunning and the album itself has received so many compliments by all who have viewed it. We truly cannot thank you enough for this."
+    },
+    {
+      "id": 2,
+      "author": "Vinika & Akhilesh",
+      "testimonial": "Just a short note to say thank you so much for the wonderful photos. The album is fabulous and we love how all the effects and backgrounds we discussed with you a few weeks ago have turned out. They have really added to the presentation of the pictures. It reminds us of our pre-wedding shoot days and your approach helped contribute to the ‘relaxed’ time that we enjoyed. We love it!."
+    }
+  ]
 }

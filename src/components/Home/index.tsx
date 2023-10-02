@@ -1,4 +1,4 @@
-import { Heading, Info } from './Text';
+import { Heading, Info, Testimonials } from './Text';
 
 import { Albums } from './Albums';
 import { Carousel } from './Carousel';
@@ -13,6 +13,7 @@ const Home: FC = () => {
       <Albums />
       <Info />
       <FilmPlayer />
+      <Testimonials />
     </>
   );
 };
