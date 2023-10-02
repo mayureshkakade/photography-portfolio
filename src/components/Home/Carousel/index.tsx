@@ -81,6 +81,7 @@ export const Carousel: FC = () => {
                 src={item.image}
                 width={1000}
                 height={1000}
+                unoptimized
                 style={{ width: '100%', height: 'auto' }}
               />
             </div>
