@@ -4,6 +4,7 @@ import { Albums } from './Albums';
 import { Carousel } from './Carousel';
 import { FC } from 'react';
 import FilmPlayer from './FilmPlayer';
+import InstagramSection from './Instagram';
 
 const Home: FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: FC = () => {
       <Info />
       <FilmPlayer />
       <Testimonials />
+      <InstagramSection />
     </>
   );
 };

@@ -47,6 +47,10 @@
     "carousel": {
       "totalImages": 5,
       "baseDir": "/assets/images/home-page/carousel/"
+    },
+    "instagram": {
+      "totalImages": 6,
+      "baseDir": "/assets/images/home-page/instagram-section/"
     }
   },
   "testimonials": [

@@ -10,6 +10,16 @@ export const getCarouselImages = () => {
   });
 };
 
+export const getInstagramSectionImages = () => {
+  const { baseDir, totalImages } = appData.home.instagram;
+  return [...Array(totalImages)].map((_, index) => {
+    return {
+      id: index + 1,
+      image: `${baseDir}${index + 1}.png`,
+    };
+  });
+};
+
 export const getAlbums = () => {
   return appData.albums.slice(0, 4);
 };
