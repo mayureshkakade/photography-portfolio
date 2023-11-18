@@ -3,14 +3,16 @@ import React, { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import { useRouter } from 'next/router';
 
-const filmData = {
-  id: 1,
-  url: 'https://youtu.be/zfy2U0ttszA',
-  lightImg: '/assets/images/films-page/video-player/film1.jpg',
-  lightImgLazy: '/assets/images/films-page/video-player/film1_lazy.jpg',
-};
+interface FilmPlayerProps {
+  filmData: {
+    id: number;
+    url: string;
+    lightImg: string;
+    lightImgLazy: string;
+  };
+}
 
-export default function FilmPlayer() {
+export default function FilmPlayer({ filmData }: Readonly<FilmPlayerProps>) {
   const { pathname } = useRouter();
 
   // Determine the css class based on current page location

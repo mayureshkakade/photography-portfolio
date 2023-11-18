@@ -2,20 +2,23 @@ import { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const brandLogo = '/assets/images/header-footer/logo.png';
 
 const Header: React.FC = () => {
   const [isMobileView, setIsMobileView] = useState<boolean>(false);
+  const { pathname } = useRouter();
 
   useEffect(() => {
-    const isMobileView = window.innerWidth > 1000 ? false : true;
+    const isMobileView = window.innerWidth <= 1000;
     setIsMobileView(isMobileView);
   }, []);
 
-  // TODO: Update the styles for header based on location
-  const headerColor = '';
-  const logoPath = isMobileView ? '' : brandLogo;
+  const headerColor =
+    pathname === '/albums' || pathname === '/films' ? 'header-color' : '';
+
+  const logoPath = isMobileView || !!headerColor ? '' : brandLogo;
 
   return (
     <header>

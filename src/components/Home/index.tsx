@@ -5,6 +5,7 @@ import { Carousel } from './Carousel';
 import { FC } from 'react';
 import FilmPlayer from './FilmPlayer';
 import InstagramSection from './Instagram';
+import { getFilmsData } from '../Films/helper';
 
 const Home: FC = () => {
   return (
@@ -13,7 +14,7 @@ const Home: FC = () => {
       <Heading />
       <Albums />
       <Info />
-      <FilmPlayer />
+      <FilmPlayer filmData={getFilmsData()[0]} />
       <Testimonials />
       <InstagramSection />
     </>

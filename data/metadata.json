@@ -64,5 +64,19 @@
       "author": "Vinika & Akhilesh",
       "testimonial": "Just a short note to say thank you so much for the wonderful photos. The album is fabulous and we love how all the effects and backgrounds we discussed with you a few weeks ago have turned out. They have really added to the presentation of the pictures. It reminds us of our pre-wedding shoot days and your approach helped contribute to the ‘relaxed’ time that we enjoyed. We love it!."
     }
+  ],
+  "filmsData": [
+    {
+      "id": 1,
+      "url": "https://youtu.be/zfy2U0ttszA",
+      "lightImg": "/assets/images/films-page/video-player/film1.jpg",
+      "lightImgLazy": "/assets/images/films-page/video-player/film1_lazy.jpg"
+    },
+    {
+      "id": 2,
+      "url": "https://youtu.be/yZ9fncxLn8Q",
+      "lightImg": "/assets/images/films-page/video-player/film.jpg",
+      "lightImgLazy": "/assets/images/films-page/video-player/film_lazy.jpg"
+    }
   ]
 }
