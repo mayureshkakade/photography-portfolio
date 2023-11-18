@@ -955,7 +955,7 @@ h3 {
   }
 
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../images/header-footer/logo.png);
+    background-image: url('/assets/images/header-footer/logo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -974,7 +974,7 @@ h3 {
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../images/header-footer/logo.png);
+    background-image: url('/assets/images/header-footer/logo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -992,7 +992,7 @@ h3 {
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../images/header-footer/logo.png);
+    background-image: url('/assets/images/header-footer/logo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1016,7 +1016,7 @@ h3 {
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../images/header-footer/logo.png);
+    background-image: url('/assets/images/header-footer/logo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
@@ -1040,7 +1040,7 @@ h3 {
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
-    background-image: url(../images/header-footer/logo.png);
+    background-image: url('/assets/images/header-footer/logo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .slicknav_icon-bar {
