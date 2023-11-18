@@ -950,7 +950,7 @@ h3 {
     background: white;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../images/contact-page/BlackLogo.png);
+    background-image: url('/assets/images/contact-page/BlackLogo.png');
     background-size: contain;
   }
 
@@ -970,7 +970,7 @@ h3 {
     background: white;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../images/contact-page/BlackLogo.png);
+    background-image: url('/assets/images/contact-page/BlackLogo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
@@ -988,7 +988,7 @@ h3 {
     padding: 15px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../images/contact-page/BlackLogo.png);
+    background-image: url('/assets/images/contact-page/BlackLogo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
@@ -1012,7 +1012,7 @@ h3 {
     padding: 25px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../images/contact-page/BlackLogo.png);
+    background-image: url('/assets/images/contact-page/BlackLogo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
@@ -1036,7 +1036,7 @@ h3 {
     padding: 25px 0px;
   }
   .header-area .main-header-area .logo_img {
-    background-image: url(../images/contact-page/BlackLogo.png);
+    background-image: url('/assets/images/contact-page/BlackLogo.png');
     background-size: contain;
   }
   .header-area .main-header-area.sticky .logo_img {
