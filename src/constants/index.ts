@@ -28,3 +28,9 @@ export const filmPageSubtitle1 =
   'We turn your dream wedding into a fairy tale.';
 
 export const filmPageSubtitle2 = 'Talk to us today!';
+
+export const SEND_MAIL_URL =
+  "https://us-central1-photography-web-app.cloudfunctions.net/sendMail";
+
+export const SEND_SMS_URL =
+  "https://us-central1-photography-web-app.cloudfunctions.net/sendSms";
