@@ -78,5 +78,12 @@
       "lightImg": "/assets/images/films-page/video-player/film.jpg",
       "lightImgLazy": "/assets/images/films-page/video-player/film_lazy.jpg"
     }
-  ]
+  ],
+  "gallery": {
+    "carousel": {
+      "totalImages": 20,
+      "imageBaseDir": "/assets/images/albums-page/carousel/images",
+      "thumbnailBaseDir": "/assets/images/albums-page/carousel/thumbnails"
+    }
+  }
 }
