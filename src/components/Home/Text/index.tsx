@@ -88,3 +88,18 @@ export const Testimonials: FC = () => {
     </div>
   );
 };
+
+export const FeaturedAlbumsHeading: FC = () => {
+  return (
+    <h3
+      style={{
+        textAlign: 'center',
+        marginTop: '50px',
+        fontSize: '28px',
+        textTransform: 'uppercase',
+      }}
+    >
+      Featured Albums
+    </h3>
+  );
+};

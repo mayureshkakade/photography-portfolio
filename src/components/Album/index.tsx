@@ -3,20 +3,14 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { displayTitle } from './helper';
-
-interface AlbumProps {
-  title: string;
-  thumbnail: string;
-  displayName: string;
-  imageCount: number;
-}
+import { AlbumData } from '../types';
 
 export default function Album({
-  title,
+  name: title,
   thumbnail,
   displayName,
-  imageCount,
-}: AlbumProps) {
+  count: imageCount,
+}: AlbumData) {
   // Begin polling for the required lazy images tag and observe the images for intersection
   useEffect(() => {
     const albumThumbImagePoll = setInterval(() => {
