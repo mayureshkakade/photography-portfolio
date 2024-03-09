@@ -1,4 +1,5 @@
 import appData from '../../../data/metadata.json';
+import { AlbumData } from '../types';
 
 export const getCarouselImages = () => {
   const { baseDir, totalImages } = appData.home.carousel;
@@ -20,6 +21,6 @@ export const getInstagramSectionImages = () => {
   });
 };
 
-export const getAlbums = () => {
-  return appData.albums.slice(0, 4);
+export const getAlbums = (): AlbumData[] => {
+  return appData.albums;
 };
