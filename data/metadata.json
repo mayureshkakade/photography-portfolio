@@ -84,6 +84,7 @@
       "totalImages": 20,
       "imageBaseDir": "/assets/images/albums-page/carousel/images",
       "thumbnailBaseDir": "/assets/images/albums-page/carousel/thumbnails"
-    }
+    },
+    "baseDir": "/assets/images/albums-page/featured-albums"
   }
 }
