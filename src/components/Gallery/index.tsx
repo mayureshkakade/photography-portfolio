@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactPhotoGallery, { PhotoClickHandler } from 'react-photo-gallery';
 import { getCoverImage, getLazyImagesDir, getRealImagesDir } from './helper';
-// import './../Shared/styles/gallery.css';
 
 interface ImgObjType {
   src: string;
@@ -81,7 +80,6 @@ export default function Gallery({ currentCategory, imageCount }: GalleryProps) {
     //Logic to load the images for the lightBox component
     const lighBoxImages = [...Array(state.imageCount)].map((_, index) => {
       const imgObj = {
-        // src: `assets/img/gallery/${state.category}/${index + 1}.jpg`,
         src: `${getRealImagesDir(state.category)}/${index + 1}.jpg`,
         id: index + 1,
       };
@@ -183,7 +181,6 @@ export default function Gallery({ currentCategory, imageCount }: GalleryProps) {
             columns={columns}
           />
         </div>
-        {/* Gallery Area */}
 
         {/* Lightbox for the gallery */}
         {isOpen && (
@@ -197,7 +194,6 @@ export default function Gallery({ currentCategory, imageCount }: GalleryProps) {
             />
           </React.Suspense>
         )}
-        {/* Lightbox for the gallery */}
       </React.Fragment>
     );
   } else {
