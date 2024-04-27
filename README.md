@@ -4,41 +4,59 @@
     </a>
 </p>
 
-# photography-portfolio
+# [Photography Portfolio](https://omkarkalgude.vercel.app/)
 
-Photography Portfolio Website built using NextJS supported by Typescript.
-The repository uses husky pre-commit hooks for linting and checking the commit messages.
+Welcome to the Photography Portfolio project, showcasing the remarkable work of photographer Omkar Kalgude.
 
-## Setup steps
+## About
 
-<!-- This is an HTML comment in Markdown -->
+This project serves as a comprehensive portfolio for Omkar Kalgude's photography. It utilizes Next.js 13 with server-side rendering for optimal performance and SEO. The tech stack includes React, TypeScript, and Resend client for email functionality.
+<br/>
+<br/>
+Note: This project was originally created as a plain CSR React app and is currently being migrated to Next.js. Old repository: [Photography Portfolio - GitLab](https://gitlab.com/photography-portfolio/photography-portfolio-site)
 
-1. Install below extensions in editor.
-   - prettier
-   - eslint
-2. ```bash
-   #install dependencies
-   $ yarn install
-   ```
-3. ```bash
-   #run development server
-   $ yarn dev
-   ```
-4. Follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) while writing commit messages.
-5. Make prettier as default formatter and enable 'format on save' in the editor for easier code formatting.
+## Features
+
+- **Next.js 13**: Utilizing the pages router.
+- **React & TypeScript**: Powering the frontend with robust and type-safe code.
+- **Intersection Observer**: Enhancing user experience with lazy loading of images.
+- **Bootstrap**: Providing a sleek and responsive design foundation.
+- **Server-side Rendering**: Optimizing SEO and initial load performance.
+- **Husky Pre-commit Hooks**: Enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and linting for code quality.
+
+## Getting Started
+
+To run the application locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/your-username/photography-portfolio.git`
+2. Navigate to the project directory: `cd photography-portfolio`
+3. Install dependencies: `yarn install`
+4. Run the development server: `yarn dev`
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- Thanks to Omkar Kalgude for providing the stunning photography featured in this portfolio.
+- Special thanks to the Next.js community for their continuous support and contributions.
 
    </br>
    </br>
 
 <p align="center">
     <a aria-label="React" href="https://legacy.reactjs.org/docs/getting-started.html">
-        <img alt="" src="https://skills.thijs.gg/icons?i=react">
+        <img width="100" height="100" src="https://img.icons8.com/plasticine/100/react.png" alt="react" />
     </a>
     <a aria-label="NextJS" href="https://nextjs.org/docs">
-        <img alt="" src="https://skills.thijs.gg/icons?i=nextjs">
+        <img width="100" height="100" src="https://img.icons8.com/fluency-systems-filled/96/nextjs.png" alt="nextjs"/>
     </a>
     <a aria-label="Typescript" href="https://www.typescriptlang.org/docs/handbook/intro.html">
-        <img alt="" src="https://skills.thijs.gg/icons?i=ts">
+        <img width="100" height="100" src="https://img.icons8.com/color/96/typescript.png" alt="typescript"/>
+    </a>
+    <a aria-label="Bootstrap" href="https://getbootstrap.com/docs/4.0/getting-started/introduction/">
+        <img width="96" height="96" src="https://img.icons8.com/color/96/bootstrap--v1.png" alt="bootstrap--v1"/>
     </a>
 </p>
 
