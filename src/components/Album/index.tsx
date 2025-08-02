@@ -10,6 +10,7 @@ export default function Album({
   thumbnail,
   displayName,
   count: imageCount,
+  id,
 }: AlbumData) {
   // Begin polling for the required lazy images tag and observe the images for intersection
   useEffect(() => {
@@ -51,6 +52,7 @@ export default function Album({
           href={{
             pathname: '/gallery',
             query: {
+              id,
               currentCategory: title,
               displayName: displayName,
               imageCount: imageCount,
@@ -73,6 +75,7 @@ export default function Album({
           href={{
             pathname: '/gallery',
             query: {
+              id,
               currentCategory: title,
               displayName: displayName,
               imageCount: imageCount,

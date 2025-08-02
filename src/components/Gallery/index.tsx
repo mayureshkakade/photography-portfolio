@@ -1,4 +1,4 @@
-// 'use client'; // This directive is essential. It marks this as a Client Component.
+'use client'; // This directive is essential. It marks this as a Client Component.
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
 import React, { useState, useEffect, useCallback } from 'react';
@@ -23,6 +23,7 @@ interface LightboxProps {
   onPrevious: () => void;
 }
 
+// TODO: Move this component into its own file
 /**
  * Lightbox component for viewing images in fullscreen with navigation
  */
@@ -219,7 +220,16 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const coverImage = images.find((image) => image.name.includes('cover'));
-  const galleryImages = images.filter((image) => !image.name.includes('cover'));
+  // TODO: Move this function to utils/helper
+  const getImageNumber = (name: string): number => {
+    return Number(name.split('.')[0]);
+  };
+  const galleryImages = images
+    .filter((image) => !image.name.includes('cover'))
+    .sort(
+      (image1, image2) =>
+        getImageNumber(image1.name) - getImageNumber(image2.name)
+    );
 
   // Configuration for responsive columns.
   const breakpointColumnsObj = {
@@ -273,25 +283,17 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
             key={image.id}
             style={{
               cursor: 'pointer',
-              transition: 'transform 0.2s ease',
             }}
             onClick={() => openLightbox(index)}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.05)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-            }}
           >
             <Image
               src={image.url}
               alt={image.name}
               width={1000}
-              height={1000}
+              height={700}
               style={{
                 width: '100%',
                 height: 'auto',
-                borderRadius: '8px',
               }}
               unoptimized
             />

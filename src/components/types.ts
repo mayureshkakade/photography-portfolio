@@ -8,7 +8,7 @@ export interface HomePageData {
 }
 
 export interface AlbumData {
-  id: number;
+  id: string;
   name: string;
   displayName: string;
   thumbnail: string;
