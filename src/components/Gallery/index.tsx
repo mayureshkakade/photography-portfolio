@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
 import React, { useState } from 'react';
-import { getImageNumber } from './helper';
+import { getCoverImage, getGalleryImages } from './helper';
 import Lightbox, { GalleryImage } from '@/components/Lightbox';
 
 interface GalleryLayoutProps {
@@ -12,14 +12,8 @@ interface GalleryLayoutProps {
 export default function GalleryLayout({ images }: GalleryLayoutProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const coverImage = images.find((image) => image.name.includes('cover'));
-  const galleryImages = images
-    .filter((image) => !image.name.includes('cover'))
-    .sort(
-      (image1, image2) =>
-        getImageNumber(image1.name) - getImageNumber(image2.name)
-    );
-
+  const coverImage = getCoverImage(images);
+  const galleryImages = getGalleryImages(images);
   const breakpointColumnsObj = {
     default: 2,
     1100: 2,

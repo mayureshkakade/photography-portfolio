@@ -13,9 +13,19 @@ export interface AlbumData {
   displayName: string;
   thumbnail: string;
   count: number;
+  driveFiles: GoogleDriveFile[];
 }
 
 export interface AppMetaData {
   albums: AlbumData[];
   home: HomePageData;
+}
+
+export interface GoogleDriveFile {
+  id: string;
+  name: string;
+}
+
+export interface GoogleDriveResponse {
+  files: GoogleDriveFile[];
 }
