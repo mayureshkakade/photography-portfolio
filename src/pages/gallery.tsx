@@ -48,8 +48,6 @@ export const getServerSideProps: GetServerSideProps<GalleryPageProps> = async (
       },
     };
   } catch (error) {
-    console.error('Error fetching gallery images:', error);
-
     return {
       props: {
         images: [],
