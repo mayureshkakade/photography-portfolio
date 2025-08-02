@@ -8,13 +8,15 @@ interface HomePageProps {
   albums: AlbumData[];
 }
 
-export const getServerSideProps: GetServerSideProps<HomePageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  HomePageProps
+> = async () => {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY;
     const staticAlbums = getAlbums();
-    
+
     let albums = staticAlbums;
-    
+
     if (API_KEY) {
       try {
         // Fetch album details from Google Drive for each album
@@ -25,7 +27,9 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
         albums = staticAlbums;
       }
     } else {
-      console.warn('GOOGLE_API_KEY not found in environment variables. Using static album data.');
+      console.warn(
+        'GOOGLE_API_KEY not found in environment variables. Using static album data.'
+      );
     }
 
     return {
