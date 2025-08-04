@@ -1,5 +1,11 @@
 import Image from 'next/image';
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
+import {
+  getOptimizedGoogleDriveUrl,
+  imageSizes,
+  imageDimensions,
+} from '@/lib/google-drive-image';
+import Spinner from '@/components/Spinner';
 
 interface GalleryImage {
   id: string;
@@ -16,6 +22,7 @@ interface LightboxProps {
   onPrevious: () => void;
 }
 
+
 export default function Lightbox({
   images,
   currentIndex,
@@ -24,6 +31,13 @@ export default function Lightbox({
   onNext,
   onPrevious,
 }: LightboxProps) {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
+  // Reset loading state when current index changes
+  useEffect(() => {
+    setIsImageLoading(true);
+  }, [currentIndex]);
+
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (!isOpen) return;
@@ -85,14 +99,25 @@ export default function Lightbox({
           position: 'absolute',
           top: '20px',
           right: '20px',
-          background: 'rgba(255, 255, 255, 0.8)',
+          background: 'rgba(0, 0, 0, 0.6)',
           border: 'none',
           borderRadius: '50%',
           width: '40px',
           height: '40px',
           fontSize: '20px',
+          color: 'white',
           cursor: 'pointer',
           zIndex: 1001,
+          transition: 'background-color 0.2s ease, opacity 0.2s ease',
+          opacity: 0.7,
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)';
+          e.currentTarget.style.opacity = '1';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)';
+          e.currentTarget.style.opacity = '0.7';
         }}
         aria-label="Close lightbox"
       >
@@ -111,14 +136,28 @@ export default function Lightbox({
             left: '20px',
             top: '50%',
             transform: 'translateY(-50%)',
-            background: 'rgba(255, 255, 255, 0.8)',
+            background: 'rgba(0, 0, 0, 0.6)',
             border: 'none',
             borderRadius: '50%',
             width: '50px',
             height: '50px',
-            fontSize: '20px',
+            fontSize: '24px',
+            color: 'white',
             cursor: 'pointer',
             zIndex: 1001,
+            transition: 'background-color 0.2s ease, opacity 0.2s ease',
+            opacity: 0.7,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)';
+            e.currentTarget.style.opacity = '1';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)';
+            e.currentTarget.style.opacity = '0.7';
           }}
           aria-label="Previous image"
         >
@@ -138,14 +177,28 @@ export default function Lightbox({
             right: '20px',
             top: '50%',
             transform: 'translateY(-50%)',
-            background: 'rgba(255, 255, 255, 0.8)',
+            background: 'rgba(0, 0, 0, 0.6)',
             border: 'none',
             borderRadius: '50%',
             width: '50px',
             height: '50px',
-            fontSize: '20px',
+            fontSize: '24px',
+            color: 'white',
             cursor: 'pointer',
             zIndex: 1001,
+            transition: 'background-color 0.2s ease, opacity 0.2s ease',
+            opacity: 0.7,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)';
+            e.currentTarget.style.opacity = '1';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'rgba(0, 0, 0, 0.6)';
+            e.currentTarget.style.opacity = '0.7';
           }}
           aria-label="Next image"
         >
@@ -162,38 +215,29 @@ export default function Lightbox({
         }}
         onClick={(e) => e.stopPropagation()}
       >
+        {/* Show spinner while image is loading */}
+        {isImageLoading && <Spinner />}
+
         <Image
-          src={currentImage.url}
+          src={getOptimizedGoogleDriveUrl(currentImage.id, 'full')}
           alt={currentImage.name}
-          width={1200}
-          height={800}
+          width={imageDimensions.lightbox.width}
+          height={imageDimensions.lightbox.height}
+          sizes={imageSizes.lightbox}
           style={{
             maxWidth: '100%',
             maxHeight: '90vh',
             width: 'auto',
             height: 'auto',
             objectFit: 'contain',
+            opacity: isImageLoading ? 0 : 1,
+            transition: 'opacity 0.3s ease',
           }}
-          unoptimized
+          onLoad={() => setIsImageLoading(false)}
+          onLoadingComplete={() => setIsImageLoading(false)}
+          priority
+          quality={100}
         />
-
-        {/* Image info */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-40px',
-            left: '0',
-            right: '0',
-            textAlign: 'center',
-            color: 'white',
-            fontSize: '14px',
-          }}
-        >
-          <p>{currentImage.name}</p>
-          <p>
-            {currentIndex + 1} of {images.length}
-          </p>
-        </div>
       </div>
     </div>
   );

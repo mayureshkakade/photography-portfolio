@@ -7,9 +7,16 @@
   ],
   "ignorePatterns": ["public/assets"],
   "rules": {
-    "no-unused-vars": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
     "prefer-const": "error",
-    "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"
   }
 }
