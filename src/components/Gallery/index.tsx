@@ -55,7 +55,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           style={{ width: '100%' }}
           alt="cover"
           src={
-            coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'large') : ''
+            coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'full') : ''
           }
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
@@ -81,7 +81,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
             onClick={() => openLightbox(index)}
           >
             <Image
-              src={getOptimizedGoogleDriveUrl(image.id, 'large')}
+              src={getOptimizedGoogleDriveUrl(image.id, 'full')}
               alt={image.name}
               width={imageDimensions.gallery.width}
               height={imageDimensions.gallery.height}
@@ -93,8 +93,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               placeholder="blur"
               blurDataURL={getBlurPlaceholder()}
               loading="lazy"
-              quality={90}
-              unoptimized
+              quality={100}
             />
           </div>
         ))}

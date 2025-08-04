@@ -5,7 +5,6 @@ import {
   imageSizes,
   imageDimensions,
 } from '@/lib/google-drive-image';
-import { preloadAdjacentImages } from '@/lib/image-preloader';
 
 interface GalleryImage {
   id: string;
@@ -64,20 +63,6 @@ export default function Lightbox({
       document.body.style.overflow = 'auto';
     };
   }, [handleKeyDown, isOpen]);
-
-  // Preload adjacent images when lightbox opens or current index changes
-  useEffect(() => {
-    if (isOpen && images.length > 1) {
-      preloadAdjacentImages(
-        images,
-        currentIndex,
-        (image) => getOptimizedGoogleDriveUrl(image.id, 'large'),
-        2 // Preload 2 images in each direction
-      ).catch((error) => {
-        console.warn('Failed to preload adjacent images:', error);
-      });
-    }
-  }, [isOpen, currentIndex, images]);
 
   if (!isOpen || !images[currentIndex]) return null;
 
@@ -183,7 +168,7 @@ export default function Lightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <Image
-          src={getOptimizedGoogleDriveUrl(currentImage.id, 'large')}
+          src={getOptimizedGoogleDriveUrl(currentImage.id, 'full')}
           alt={currentImage.name}
           width={imageDimensions.lightbox.width}
           height={imageDimensions.lightbox.height}
@@ -196,27 +181,8 @@ export default function Lightbox({
             objectFit: 'contain',
           }}
           priority
-          quality={85}
-          unoptimized
+          quality={100}
         />
-
-        {/* Image info */}
-        {/* <div */}
-        {/*   style={{ */}
-        {/*     position: 'absolute', */}
-        {/*     bottom: '-40px', */}
-        {/*     left: '0', */}
-        {/*     right: '0', */}
-        {/*     textAlign: 'center', */}
-        {/*     color: 'white', */}
-        {/*     fontSize: '14px', */}
-        {/*   }} */}
-        {/* > */}
-        {/*   <p>{currentImage.name}</p> */}
-        {/*   <p> */}
-        {/*     {currentIndex + 1} of {images.length} */}
-        {/*   </p> */}
-        {/* </div> */}
       </div>
     </div>
   );
