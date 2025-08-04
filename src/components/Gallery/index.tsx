@@ -50,7 +50,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
 
   return (
     <React.Fragment>
-      <div>
+      <div className="padding_top">
         <Image
           style={{
             width: '100%',
