@@ -1,46 +1,52 @@
 {
   "albums": [
     {
-      "id": 1,
+      "id": "1J5R8qUSwihacteDunrY0oDi4hhC3-lcV",
       "name": "album-1",
       "displayName": "Ruchika & Nikhil",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-1/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 22
+      "count": 22,
+      "driveFiles": []
     },
     {
-      "id": 2,
+      "id": "1Q_2xw4iZkvXLbSPWMr4REs8iRDMMooo8",
       "name": "album-2",
       "displayName": "Shalaka & Prasad",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-2/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 28
+      "count": 28,
+      "driveFiles": []
     },
     {
-      "id": 3,
+      "id": "1vjsOM8h6HzQYQr6a-5B_V57bNBwLvPNo",
       "name": "album-3",
       "displayName": "Nikhil & Titeeksha",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-3/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 37
+      "count": 37,
+      "driveFiles": []
     },
     {
-      "id": 4,
+      "id": "14MVf4fie0OaJmKamTohfTgYZsy4IlEN1",
       "name": "album-4",
       "displayName": "Harsha & Karthik",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-4/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 36
+      "count": 36,
+      "driveFiles": []
     },
     {
-      "id": 5,
+      "id": "1GLWcUKYIq-cmYNQMwcia651oF8yqxun_",
       "name": "album-5",
       "displayName": "Hitesh & Shweta",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-5/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 25
+      "count": 25,
+      "driveFiles": []
     },
     {
-      "id": 6,
+      "id": "1o-02IMh-JYXobVsGd2nZJuf2c-b0myr4",
       "name": "album-6",
       "displayName": "Portfolio",
       "thumbnail": "/assets/images/albums-page/featured-albums/album-6/thumbnail/lazy-thumbnail/thumb.jpg",
-      "count": 51
+      "count": 51,
+      "driveFiles": []
     }
   ],
   "home": {

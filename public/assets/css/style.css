@@ -7084,3 +7084,64 @@ h6 {
     padding: 0 4.8rem !important;
   }
 }
+
+/* React Masonry CSS Grid Styles */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -15px; /* gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 15px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  margin-bottom: 15px; /* space between items vertically */
+  break-inside: avoid; /* Prevents breaking inside items */
+  page-break-inside: avoid; /* For better browser support */
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: transparent;
+}
+
+.my-masonry-grid_column img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0px;
+}
+
+/* Responsive adjustments for masonry grid */
+@media (max-width: 768px) {
+  .my-masonry-grid {
+    margin-left: -10px;
+  }
+
+  .my-masonry-grid_column {
+    padding-left: 10px;
+  }
+
+  .my-masonry-grid_column > div {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-masonry-grid {
+    margin-left: -8px;
+  }
+
+  .my-masonry-grid_column {
+    padding-left: 8px;
+  }
+
+  .my-masonry-grid_column > div {
+    margin-bottom: 8px;
+  }
+}
+
+/* Remove explicit column ordering - let react-masonry-css handle distribution */

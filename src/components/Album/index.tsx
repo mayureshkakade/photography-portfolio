@@ -1,43 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { displayTitle } from './helper';
 import { AlbumData } from '../types';
+import {
+  getOptimizedGoogleDriveUrl,
+  getBlurPlaceholder,
+  imageSizes,
+  imageDimensions,
+} from '@/lib/google-drive-image';
 
 export default function Album({
   name: title,
   thumbnail,
   displayName,
   count: imageCount,
+  id,
 }: AlbumData) {
-  // Begin polling for the required lazy images tag and observe the images for intersection
-  useEffect(() => {
-    const albumThumbImagePoll = setInterval(() => {
-      if (document.querySelectorAll('.lazy_album_image').length > 0) {
-        clearInterval(albumThumbImagePoll);
-        const observer = new IntersectionObserver((entry, imgObserver) => {
-          entry.forEach((element) => {
-            if (element.isIntersecting) {
-              const lazyImage = element.target as HTMLImageElement;
-              const originalImage = lazyImage.src.replace(
-                'lazy-thumbnail/thumb.jpg',
-                'thumbnail/thumb.jpg'
-              );
-              lazyImage.src = originalImage;
-              lazyImage.classList.remove('lazy_album_image');
-              imgObserver.unobserve(lazyImage);
-            }
-          });
-        });
+  // Extract file ID from Google Drive URL for optimization
+  const getFileIdFromUrl = (url: string): string => {
+    if (!url) return '';
+    const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+    return match ? match[1] : url;
+  };
 
-        const elementArray = document.querySelectorAll('.lazy_album_image');
-        elementArray.forEach((element) => {
-          observer.observe(element);
-        });
-      }
-    }, 200);
-  }, []);
+  const fileId = getFileIdFromUrl(thumbnail);
+  const optimizedThumbnail = fileId
+    ? getOptimizedGoogleDriveUrl(fileId, 'medium')
+    : thumbnail;
 
   return (
     <div style={{ padding: '1%' }} className="col-xl-6 col-md-6">
@@ -51,6 +42,7 @@ export default function Album({
           href={{
             pathname: '/gallery',
             query: {
+              id,
               currentCategory: title,
               displayName: displayName,
               imageCount: imageCount,
@@ -60,12 +52,19 @@ export default function Album({
           <div className={`thumb`}>
             <Image
               alt="Wedding Album Thumbnail"
-              className="lazy_album_image"
-              src={thumbnail}
-              width={1000}
-              height={1000}
+              src={optimizedThumbnail}
+              width={imageDimensions.thumbnail.width}
+              height={imageDimensions.thumbnail.height}
+              sizes={imageSizes.thumbnail}
+              placeholder="blur"
+              blurDataURL={getBlurPlaceholder()}
+              style={{
+                height: '100%',
+                width: '100%',
+                objectFit: 'cover',
+              }}
               unoptimized
-              style={{ height: '100%' }}
+              quality={85}
             />
           </div>
         </Link>
@@ -73,6 +72,7 @@ export default function Album({
           href={{
             pathname: '/gallery',
             query: {
+              id,
               currentCategory: title,
               displayName: displayName,
               imageCount: imageCount,
