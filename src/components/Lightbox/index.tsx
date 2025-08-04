@@ -38,6 +38,20 @@ export default function Lightbox({
     setIsImageLoading(true);
   }, [currentIndex]);
 
+  // Get next 2 images for preloading
+  const getNextImages = () => {
+    const nextImages = [];
+    for (let i = 1; i <= 2; i++) {
+      const nextIndex = currentIndex + i;
+      if (nextIndex < images.length) {
+        nextImages.push({ image: images[nextIndex], index: nextIndex });
+      }
+    }
+    return nextImages;
+  };
+
+  const nextImages = getNextImages();
+
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (!isOpen) return;
@@ -239,6 +253,21 @@ export default function Lightbox({
           quality={100}
         />
       </div>
+
+      {/* Preload next 2 images using hidden Next.js Image components */}
+      {nextImages.map(({ image, index }) => (
+        <div key={`preload-${index}`} style={{ display: 'none' }}>
+          <Image
+            src={getOptimizedGoogleDriveUrl(image.id, 'full')}
+            alt={`Preload ${image.name}`}
+            width={imageDimensions.lightbox.width}
+            height={imageDimensions.lightbox.height}
+            sizes={imageSizes.lightbox}
+            priority
+            quality={100}
+          />
+        </div>
+      ))}
     </div>
   );
 }
