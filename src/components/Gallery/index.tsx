@@ -3,6 +3,12 @@ import Masonry from 'react-masonry-css';
 import React, { useState } from 'react';
 import { getCoverImage, getGalleryImages } from './helper';
 import Lightbox, { GalleryImage } from '@/components/Lightbox';
+import {
+  getOptimizedGoogleDriveUrl,
+  getBlurPlaceholder,
+  imageSizes,
+  imageDimensions,
+} from '@/lib/google-drive-image';
 
 interface GalleryLayoutProps {
   images: GalleryImage[];
@@ -48,10 +54,16 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
         <Image
           style={{ width: '100%' }}
           alt="cover"
-          src={coverImage?.url ?? ''}
-          width={1200}
-          height={438}
-          unoptimized
+          src={
+            coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'large') : ''
+          }
+          width={imageDimensions.cover.width}
+          height={imageDimensions.cover.height}
+          sizes={imageSizes.cover}
+          placeholder="blur"
+          blurDataURL={getBlurPlaceholder()}
+          priority
+          quality={90}
         />
       </div>
       <Masonry
@@ -69,14 +81,19 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
             onClick={() => openLightbox(index)}
           >
             <Image
-              src={image.url}
+              src={getOptimizedGoogleDriveUrl(image.id, 'large')}
               alt={image.name}
-              width={1000}
-              height={700}
+              width={imageDimensions.gallery.width}
+              height={imageDimensions.gallery.height}
+              sizes={imageSizes.gallery}
               style={{
                 width: '100%',
                 height: 'auto',
               }}
+              placeholder="blur"
+              blurDataURL={getBlurPlaceholder()}
+              loading="lazy"
+              quality={90}
               unoptimized
             />
           </div>

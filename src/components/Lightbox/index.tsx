@@ -1,5 +1,11 @@
 import Image from 'next/image';
 import React, { useEffect, useCallback } from 'react';
+import {
+  getOptimizedGoogleDriveUrl,
+  imageSizes,
+  imageDimensions,
+} from '@/lib/google-drive-image';
+import { preloadAdjacentImages } from '@/lib/image-preloader';
 
 interface GalleryImage {
   id: string;
@@ -58,6 +64,20 @@ export default function Lightbox({
       document.body.style.overflow = 'auto';
     };
   }, [handleKeyDown, isOpen]);
+
+  // Preload adjacent images when lightbox opens or current index changes
+  useEffect(() => {
+    if (isOpen && images.length > 1) {
+      preloadAdjacentImages(
+        images,
+        currentIndex,
+        (image) => getOptimizedGoogleDriveUrl(image.id, 'large'),
+        2 // Preload 2 images in each direction
+      ).catch((error) => {
+        console.warn('Failed to preload adjacent images:', error);
+      });
+    }
+  }, [isOpen, currentIndex, images]);
 
   if (!isOpen || !images[currentIndex]) return null;
 
@@ -163,10 +183,11 @@ export default function Lightbox({
         onClick={(e) => e.stopPropagation()}
       >
         <Image
-          src={currentImage.url}
+          src={getOptimizedGoogleDriveUrl(currentImage.id, 'large')}
           alt={currentImage.name}
-          width={1200}
-          height={800}
+          width={imageDimensions.lightbox.width}
+          height={imageDimensions.lightbox.height}
+          sizes={imageSizes.lightbox}
           style={{
             maxWidth: '100%',
             maxHeight: '90vh',
@@ -174,26 +195,28 @@ export default function Lightbox({
             height: 'auto',
             objectFit: 'contain',
           }}
+          priority
+          quality={85}
           unoptimized
         />
 
         {/* Image info */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '-40px',
-            left: '0',
-            right: '0',
-            textAlign: 'center',
-            color: 'white',
-            fontSize: '14px',
-          }}
-        >
-          <p>{currentImage.name}</p>
-          <p>
-            {currentIndex + 1} of {images.length}
-          </p>
-        </div>
+        {/* <div */}
+        {/*   style={{ */}
+        {/*     position: 'absolute', */}
+        {/*     bottom: '-40px', */}
+        {/*     left: '0', */}
+        {/*     right: '0', */}
+        {/*     textAlign: 'center', */}
+        {/*     color: 'white', */}
+        {/*     fontSize: '14px', */}
+        {/*   }} */}
+        {/* > */}
+        {/*   <p>{currentImage.name}</p> */}
+        {/*   <p> */}
+        {/*     {currentIndex + 1} of {images.length} */}
+        {/*   </p> */}
+        {/* </div> */}
       </div>
     </div>
   );
