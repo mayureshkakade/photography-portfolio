@@ -52,7 +52,12 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
     <React.Fragment>
       <div>
         <Image
-          style={{ width: '100%' }}
+          style={{
+            width: '100%',
+            height: 'auto',
+            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            objectFit: 'cover',
+          }}
           alt="cover"
           src={
             coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'full') : ''
@@ -63,7 +68,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
           priority
-          quality={90}
+          quality={100}
         />
       </div>
       <Masonry
