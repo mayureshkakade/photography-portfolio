@@ -8,14 +8,23 @@ import InstagramSection from './Instagram';
 import { getFilmsData } from '../Films/helper';
 import { AlbumData } from '../types';
 
-interface HomeProps {
-  albums: AlbumData[];
+interface CarouselImage {
+  id: string;
+  url: string;
+  name: string;
 }
 
-const Home: FC<HomeProps> = ({ albums }) => {
+interface HomeProps {
+  albums: AlbumData[];
+  carouselImages: CarouselImage[];
+}
+
+const Home: FC<HomeProps> = ({ albums, carouselImages }) => {
+  // Log the carousel images fetched from Google Drive
+  console.log('Carousel Images fetched from Google Drive:', carouselImages);
   return (
     <>
-      <Carousel />;
+      <Carousel />
       <Heading />
       <Albums albums={albums.slice(0, 4)} parentFeature="home-page" />
       <Info />

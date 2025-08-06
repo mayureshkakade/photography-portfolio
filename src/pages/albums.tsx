@@ -2,7 +2,7 @@ import Carousel from '@/components/Carousel';
 import { Albums } from '@/components/Home/Albums';
 import { FeaturedAlbumsHeading } from '@/components/Home/Text';
 import { getAlbums } from '@/components/Home/helper';
-import { fetchAllAlbumsDetails } from '@/components/Home/Albums/helper';
+import { fetchAllAlbumsDetails } from '@/lib/google-drive-image';
 import { AlbumData } from '@/components/types';
 import { GetServerSideProps } from 'next';
 
