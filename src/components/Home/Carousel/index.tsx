@@ -4,10 +4,14 @@ import { FC, useState } from 'react';
 
 import Image from 'next/image';
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
-import { getCarouselImages } from '../helper';
+import { CarouselImage } from '@/components/types';
+import { imageSizes } from '@/lib/google-drive-image';
 
-export const Carousel: FC = () => {
-  const images = getCarouselImages();
+interface CarouselProps {
+  carouselImages: CarouselImage[];
+}
+
+export const Carousel: FC<CarouselProps> = ({ carouselImages: images }) => {
   const [{ currentSlide }, setState] = useState({
     currentSlide: 0,
     isLoading: true,
@@ -78,11 +82,13 @@ export const Carousel: FC = () => {
             <div key={item.id}>
               <Image
                 alt="Wedding Photograph"
-                src={item.image}
+                src={item.url}
                 width={1000}
                 height={1000}
-                unoptimized
+                sizes={imageSizes.cover}
                 style={{ width: '100%', height: 'auto' }}
+                quality={100}
+                priority
               />
             </div>
           );

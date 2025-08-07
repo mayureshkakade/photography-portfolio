@@ -26,6 +26,16 @@ export interface GoogleDriveFile {
   name: string;
 }
 
+export interface GoogleDriveMimeFilterOptions {
+  mimeTypeFilter?: string;
+}
+
+export interface CarouselImage {
+  id: string;
+  url: string;
+  name: string;
+}
+
 export interface GoogleDriveResponse {
   files: GoogleDriveFile[];
 }

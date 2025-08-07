@@ -24,6 +24,86 @@ Note: This project was originally created as a plain CSR React app and is curren
 - **Server-side Rendering**: Optimizing SEO and initial load performance.
 - **Husky Pre-commit Hooks**: Enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and linting for code quality.
 
+## Folder Structure
+
+```
+photography-portfolio/
+├── public/                  # Static assets (favicon, images, CSS, etc.)
+├── data/                    # Project metadata (e.g., metadata.json)
+├── src/                     # Source code
+│   ├── components/          # React components
+│   │   ├── types.ts
+│   │   ├── AboutUs/
+│   │   │   └── index.tsx
+│   │   ├── Album/
+│   │   │   ├── helper.ts
+│   │   │   └── index.tsx
+│   │   ├── Carousel/
+│   │   │   ├── helper.ts
+│   │   │   └── index.tsx
+│   │   ├── ContactUs/
+│   │   │   └── index.tsx
+│   │   ├── Custom404/
+│   │   │   ├── styles/
+│   │   │   │   └── index.module.css
+│   │   │   └── index.tsx
+│   │   ├── Films/
+│   │   │   ├── helper.ts
+│   │   │   └── index.tsx
+│   │   ├── Gallery/
+│   │   │   ├── helper.ts
+│   │   │   └── index.tsx
+│   │   ├── Home/
+│   │   │   ├── Albums/
+│   │   │   │   ├── helper.ts
+│   │   │   │   └── index.tsx
+│   │   │   ├── Carousel/
+│   │   │   │   └── index.tsx
+│   │   │   ├── FilmPlayer/
+│   │   │   │   └── index.tsx
+│   │   │   ├── Instagram/
+│   │   │   │   └── index.tsx
+│   │   │   ├── Text/
+│   │   │   │   └── index.tsx
+│   │   │   ├── helper.ts
+│   │   │   └── index.tsx
+│   │   ├── Layout/
+│   │   │   ├── Footer/
+│   │   │   │   └── index.tsx
+│   │   │   ├── Header/
+│   │   │   │   └── index.tsx
+│   │   │   └── index.tsx
+│   │   ├── Lightbox/
+│   │   │   └── index.tsx
+│   │   ├── Spinner/
+│   │   │   └── index.tsx
+│   │   └── (other component files and helpers)
+│   ├── constants/           # Project constants
+│   │   └── index.ts         # Constants index
+│   ├── lib/                 # Library utilities (image preloader, Google Drive utils)
+│   │   ├── google-drive-image.ts
+│   │   └── image-preloader.ts
+│   └── pages/               # Next.js pages (routes)
+│       ├── _app.tsx
+│       ├── _document.tsx
+│       ├── 404.tsx
+│       ├── about.tsx
+│       ├── albums.tsx
+│       ├── contact.tsx
+│       ├── films.tsx
+│       ├── gallery.tsx
+│       └── index.tsx
+├── README.md                # Project documentation
+├── LICENSE                  # License file
+├── package.json             # Project configuration and dependencies
+├── yarn.lock                # Yarn lockfile
+├── tsconfig.json            # TypeScript configuration
+├── next.config.js           # Next.js configuration
+├── commitlint.config.js     # Commit message linting config
+├── globals.d.ts             # Global TypeScript definitions
+├── typings.d.ts             # Project-specific TypeScript types
+```
+
 ## Getting Started
 
 To run the application locally, follow these steps:

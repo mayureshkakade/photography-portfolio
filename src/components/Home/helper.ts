@@ -24,3 +24,5 @@ export const getInstagramSectionImages = () => {
 export const getAlbums = (): AlbumData[] => {
   return appData.albums;
 };
+
+export const CAROUSEL_FOLDER_ID = appData.home.carousel.id;
