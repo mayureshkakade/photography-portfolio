@@ -1,5 +1,5 @@
 import Home from '@/components/Home';
-import { getAlbums } from '@/components/Home/helper';
+import { CAROUSEL_FOLDER_ID, getAlbums } from '@/components/Home/helper';
 import { fetchAllAlbumsDetails } from '@/lib/google-drive-image';
 import { AlbumData } from '@/components/types';
 import { GetServerSideProps } from 'next';
@@ -21,12 +21,11 @@ export const getServerSideProps: GetServerSideProps<
 > = async () => {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY;
-    const CAROUSEL_FOLDER_ID = 'asdha'; // Add this env variable
     const staticAlbums = getAlbums();
     let albums = staticAlbums;
     let carouselImages: CarouselImage[] = [];
 
-    if (API_KEY && CAROUSEL_FOLDER_ID) {
+    if (API_KEY) {
       try {
         // Fetch album details from Google Drive for each album
         albums = await fetchAllAlbumsDetails(staticAlbums, API_KEY);

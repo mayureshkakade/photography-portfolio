@@ -94,7 +94,7 @@ export const fetchGoogleDriveCarouselImages = async (
   const files = await fetchGoogleDriveFilesFromFolder(folderId, apiKey, {
     mimeTypeFilter: 'image/',
   });
-  return mapDriveFilesToImages(files, 'large');
+  return mapDriveFilesToImages(files, 'full');
 };
 
 /**

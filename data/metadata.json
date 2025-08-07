@@ -51,6 +51,7 @@
   ],
   "home": {
     "carousel": {
+      "id": "1WL971cPW2MQ6pYBryN3D0qIJ7gG_sIbO",
       "totalImages": 5,
       "baseDir": "/assets/images/home-page/carousel/"
     },
@@ -74,9 +75,9 @@
   "filmsData": [
     {
       "id": 1,
-      "url": "https://youtu.be/zfy2U0ttszA",
-      "lightImg": "/assets/images/films-page/video-player/film1.jpg",
-      "lightImgLazy": "/assets/images/films-page/video-player/film1_lazy.jpg"
+      "url": "https://youtu.be/lUUaS8iuZvA",
+      "lightImg": "/assets/images/films-page/video-player/film3.jpg",
+      "lightImgLazy": "/assets/images/films-page/video-player/film3_lazy.jpg"
     },
     {
       "id": 2,

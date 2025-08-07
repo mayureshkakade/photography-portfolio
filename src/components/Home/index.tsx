@@ -6,13 +6,7 @@ import { FC } from 'react';
 import FilmPlayer from './FilmPlayer';
 import InstagramSection from './Instagram';
 import { getFilmsData } from '../Films/helper';
-import { AlbumData } from '../types';
-
-interface CarouselImage {
-  id: string;
-  url: string;
-  name: string;
-}
+import { AlbumData, CarouselImage } from '../types';
 
 interface HomeProps {
   albums: AlbumData[];
@@ -20,11 +14,9 @@ interface HomeProps {
 }
 
 const Home: FC<HomeProps> = ({ albums, carouselImages }) => {
-  // Log the carousel images fetched from Google Drive
-  console.log('Carousel Images fetched from Google Drive:', carouselImages);
   return (
     <>
-      <Carousel />
+      <Carousel carouselImages={carouselImages} />
       <Heading />
       <Albums albums={albums.slice(0, 4)} parentFeature="home-page" />
       <Info />
