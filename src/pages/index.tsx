@@ -21,15 +21,12 @@ export const getServerSideProps: GetServerSideProps<
 > = async () => {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY;
-    const staticAlbums = getAlbums();
-    let albums = staticAlbums;
+    let albums: AlbumData[] = [];
     let carouselImages: CarouselImage[] = [];
 
     if (API_KEY) {
       try {
-        // Fetch album details from Google Drive for each album
-        albums = await fetchAllAlbumsDetails(staticAlbums, API_KEY);
-        // Fetch Carousel images from specific Google Drive folder
+        albums = await fetchAllAlbumsDetails(getAlbums(), API_KEY);
         carouselImages = await fetchGoogleDriveCarouselImages(
           CAROUSEL_FOLDER_ID,
           API_KEY
@@ -53,7 +50,7 @@ export const getServerSideProps: GetServerSideProps<
     console.error('Error in getServerSideProps:', error);
     return {
       props: {
-        albums: getAlbums(),
+        albums: [],
         carouselImages: [],
       },
     };

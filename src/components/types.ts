@@ -9,10 +9,8 @@ export interface HomePageData {
 
 export interface AlbumData {
   id: string;
-  name: string;
   displayName: string;
-  thumbnail: string;
-  count: number;
+  thumbnailUrl: string;
   driveFiles: GoogleDriveFile[];
 }
 

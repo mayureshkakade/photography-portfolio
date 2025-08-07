@@ -136,18 +136,15 @@ export async function fetchGoogleDriveAlbumFiles(
  * Maps Google Drive files to an AlbumData object.
  */
 export function mapAlbumDetails(
-  album: AlbumData,
+  albumId: string,
   imageFiles: GoogleDriveFile[]
 ): AlbumData {
-  const count = imageFiles.length;
-  const thumbnail = getThumbnailImage(imageFiles) || album.thumbnail;
+  const thumbnailImage = getThumbnailImage(imageFiles);
   const displayName = getAlbumDisplayName(imageFiles);
   return {
-    id: album.id,
-    name: displayName,
+    id: albumId,
     displayName,
-    count,
-    thumbnail,
+    thumbnailUrl: thumbnailImage,
     driveFiles: imageFiles,
   };
 }
@@ -156,12 +153,12 @@ export function mapAlbumDetails(
  * Fetches and maps details for multiple albums (Google Drive folders).
  */
 export async function fetchAllAlbumsDetails(
-  albums: AlbumData[],
+  albums: Pick<AlbumData, 'id'>[],
   apiKey: string
 ): Promise<AlbumData[]> {
   const albumPromises = albums.map(async (album) => {
     const imageFiles = await fetchGoogleDriveAlbumFiles(album.id, apiKey);
-    return mapAlbumDetails(album, imageFiles);
+    return mapAlbumDetails(album.id, imageFiles);
   });
   return Promise.all(albumPromises);
 }
