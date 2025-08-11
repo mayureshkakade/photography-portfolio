@@ -1,6 +1,6 @@
 import ContactUs from '@/components/ContactUs';
 import { CONTACT_FOLDER_ID } from '@/components/Home/helper';
-import { fetchGoogleDriveImages } from '@/lib/google-drive-image';
+import { fetchSingleCoverImage } from '@/lib/google-drive-image';
 import { AppImageData } from '@/components/types';
 import { GetServerSideProps } from 'next';
 
@@ -17,10 +17,7 @@ export const getServerSideProps: GetServerSideProps<ContactPageProps> = async ()
   };
   if (API_KEY) {
     try {
-      const images = await fetchGoogleDriveImages(CONTACT_FOLDER_ID, API_KEY, 'full');
-      if (images.length > 0) {
-        coverImage = images[0];
-      }
+      coverImage = await fetchSingleCoverImage(CONTACT_FOLDER_ID, API_KEY, 'full');
     } catch (error) {
       console.error('Error fetching ContactUs cover image:', error);
     }
