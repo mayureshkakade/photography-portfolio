@@ -7,7 +7,7 @@ import {
 import { fetchAllAlbumsDetails } from '@/lib/google-drive-image';
 import { AlbumData, AppImageData } from '@/components/types';
 import { GetServerSideProps } from 'next';
-import { fetchGoogleDriveCarouselImages } from '@/lib/google-drive-image';
+import { fetchGoogleDriveImages } from '@/lib/google-drive-image';
 
 interface HomePageProps {
   albums: AlbumData[];
@@ -27,11 +27,11 @@ export const getServerSideProps: GetServerSideProps<
     if (API_KEY) {
       try {
         albums = await fetchAllAlbumsDetails(getAlbums(), API_KEY);
-        carouselImages = await fetchGoogleDriveCarouselImages(
+        carouselImages = await fetchGoogleDriveImages(
           CAROUSEL_FOLDER_ID,
           API_KEY
         );
-        instagramImages = await fetchGoogleDriveCarouselImages(
+        instagramImages = await fetchGoogleDriveImages(
           INSTAGRAM_FOLDER_ID,
           API_KEY
         );
