@@ -27,6 +27,11 @@
       "id": "1SMpsKPU64uxb8y-_oEueP8oRtZOkp8H8"
     }
   },
+  "album": {
+    "carousel": {
+      "id": "1Z2KUza1Ehzzvrf0QBDnNz8X6GRUMI7pM"
+    }
+  },
   "testimonials": [
     {
       "id": 1,
@@ -58,6 +63,16 @@
       "totalImages": 20,
       "imageBaseDir": "/assets/images/albums-page/carousel/images",
       "thumbnailBaseDir": "/assets/images/albums-page/carousel/thumbnails"
+    }
+  },
+  "about": {
+    "cover": {
+      "id": "1p1MjEGCuwstfaUyItvVrBnt2dm3bkwyn"
+    }
+  },
+  "contact": {
+    "cover": {
+      "id": "1KlJDMDZWdRlydSS3TThKvykKCBa-YbC6"
     }
   }
 }

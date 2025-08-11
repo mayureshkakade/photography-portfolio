@@ -1,7 +1,16 @@
 import React, { FC } from 'react';
-
 import Image from 'next/image';
-import styled from 'styled-components';
+
+import {
+  getBlurPlaceholder,
+  imageDimensions,
+  imageSizes,
+} from '@/lib/google-drive-image';
+import { AppImageData } from '../types';
+
+interface AboutUsProps {
+  coverImage: AppImageData;
+}
 
 const H2TitleStyle = {
   fontSize: '1.6875rem',
@@ -41,30 +50,26 @@ const FAQAnswerStyle = {
   color: 'black',
 };
 
-//Styled Component
-const LineStyleDiv = styled.div`
-  @media (min-width: 48em) {
-    width: 1px;
-    height: 80%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.14);
-  }
-`;
-
-const AboutUs: FC = () => {
+const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
   return (
     <>
       <div className="padding_top">
         <Image
+          style={{
+            width: '100%',
+            height: 'auto',
+            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            objectFit: 'cover',
+          }}
           alt="Wedding Photo Banner"
-          src={`/assets/images/about-page/AboutUs.jpg`}
-          width={1000}
-          height={1000}
-          style={{ width: '100%', height: 'auto' }}
-          unoptimized
+          src={coverImage.url}
+          width={imageDimensions.cover.width}
+          height={imageDimensions.cover.height}
+          sizes={imageSizes.cover}
+          placeholder="blur"
+          blurDataURL={getBlurPlaceholder()}
+          priority
+          quality={100}
         />
       </div>
 
@@ -192,10 +197,10 @@ const AboutUs: FC = () => {
       <div>
         <div className="container" style={{ marginBottom: '80px' }}>
           <div className="row" style={{ position: 'relative' }}>
-            <LineStyleDiv
-              className="middle_line"
+            <div
+              className="middle_line about-page-divider"
               style={{ marginTop: '35px', width: '1px' }}
-            ></LineStyleDiv>
+            ></div>
             <div style={{ paddingBottom: '80px' }} className="col-lg-12">
               <h2
                 style={{ ...H2TitleStyle, textTransform: 'uppercase' }}

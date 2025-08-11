@@ -93,6 +93,18 @@ export const fetchGoogleDriveImages = async (
 };
 
 /**
+ * Fetches the first cover image from a Google Drive folder.
+ */
+export const fetchSingleCoverImage = async (
+  folderId: string,
+  apiKey: string,
+  size: ImageSize = 'full'
+): Promise<AppImageData> => {
+  const images = await fetchGoogleDriveImages(folderId, apiKey, size);
+  return images.length > 0 ? images[0] : { id: '', url: '', name: '' };
+};
+
+/**
  * Finds and returns the thumbnail image URL from Google Drive images.
  */
 export const getThumbnailImage = (images: GoogleDriveFile[]) => {

@@ -22,7 +22,18 @@ const H3Style = {
   paddingTop: '10px',
 };
 
-const ContactUs: FC = () => {
+import { AppImageData } from '@/components/types';
+import {
+  getBlurPlaceholder,
+  imageDimensions,
+  imageSizes,
+} from '@/lib/google-drive-image';
+
+interface ContactUsProps {
+  coverImage: AppImageData;
+}
+
+const ContactUs: FC<ContactUsProps> = ({ coverImage }) => {
   const [state, setState] = useState({
     message: '',
     name: '',
@@ -33,7 +44,7 @@ const ContactUs: FC = () => {
     showErrorAlert: false,
   });
 
-  const handleChange : ChangeEventHandler<HTMLInputElement>= (e) => {
+  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     setState((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -76,12 +87,21 @@ const ContactUs: FC = () => {
     <>
       <div className="padding_top">
         <Image
-          alt="Contact Wedding Photographer Image"
-          src={`/assets/images/contact-page/ContactUs.jpg`}
-          width={1000}
-          height={1000}
-          style={{ width: '100%', height: 'auto' }}
-          unoptimized
+          style={{
+            width: '100%',
+            height: 'auto',
+            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            objectFit: 'cover',
+          }}
+          alt="Wedding Photo Banner"
+          src={coverImage.url}
+          width={imageDimensions.cover.width}
+          height={imageDimensions.cover.height}
+          sizes={imageSizes.cover}
+          placeholder="blur"
+          blurDataURL={getBlurPlaceholder()}
+          priority
+          quality={100}
         />
       </div>
       <div className="contact-section">
