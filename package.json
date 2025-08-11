@@ -24,14 +24,12 @@
     "react-player": "^1.15.3",
     "react-responsive-carousel": "^3.2.4",
     "reactstrap": "^8.4.1",
-    "styled-components": "^5.1.0",
     "typescript": "5.0.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@types/jquery": "^3.5.16",
-    "@types/styled-components": "^5.1.28",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.0",
