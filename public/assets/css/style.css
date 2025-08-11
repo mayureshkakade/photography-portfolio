@@ -6439,8 +6439,8 @@ h6 {
 }
 
 .carousel .thumbs-wrapper {
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
 }
 
 /* Carousel arrows styles */
