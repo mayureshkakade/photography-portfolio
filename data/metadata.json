@@ -59,5 +59,15 @@
       "imageBaseDir": "/assets/images/albums-page/carousel/images",
       "thumbnailBaseDir": "/assets/images/albums-page/carousel/thumbnails"
     }
+  },
+  "about": {
+    "cover": {
+      "id": "1p1MjEGCuwstfaUyItvVrBnt2dm3bkwyn"
+    }
+  },
+  "contact": {
+    "cover": {
+      "id": "1KlJDMDZWdRlydSS3TThKvykKCBa-YbC6"
+    }
   }
 }

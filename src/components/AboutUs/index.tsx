@@ -2,6 +2,16 @@ import React, { FC } from 'react';
 
 import Image from 'next/image';
 import styled from 'styled-components';
+import {
+  getBlurPlaceholder,
+  imageDimensions,
+  imageSizes,
+} from '@/lib/google-drive-image';
+import { AppImageData } from '../types';
+
+interface AboutUsProps {
+  coverImage: AppImageData;
+}
 
 const H2TitleStyle = {
   fontSize: '1.6875rem',
@@ -54,17 +64,26 @@ const LineStyleDiv = styled.div`
   }
 `;
 
-const AboutUs: FC = () => {
+const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
   return (
     <>
       <div className="padding_top">
         <Image
+          style={{
+            width: '100%',
+            height: 'auto',
+            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            objectFit: 'cover',
+          }}
           alt="Wedding Photo Banner"
-          src={`/assets/images/about-page/AboutUs.jpg`}
-          width={1000}
-          height={1000}
-          style={{ width: '100%', height: 'auto' }}
-          unoptimized
+          src={coverImage.url}
+          width={imageDimensions.cover.width}
+          height={imageDimensions.cover.height}
+          sizes={imageSizes.cover}
+          placeholder="blur"
+          blurDataURL={getBlurPlaceholder()}
+          priority
+          quality={100}
         />
       </div>
 
