@@ -22,7 +22,6 @@ interface LightboxProps {
   onPrevious: () => void;
 }
 
-
 export default function Lightbox({
   images,
   currentIndex,
@@ -223,8 +222,8 @@ export default function Lightbox({
       {/* Image container */}
       <div
         style={{
-          maxWidth: '90%',
-          maxHeight: '90%',
+          maxWidth: '100%',
+          maxHeight: '100%',
           position: 'relative',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -237,15 +236,13 @@ export default function Lightbox({
           alt={currentImage.name}
           width={imageDimensions.lightbox.width}
           height={imageDimensions.lightbox.height}
+          className="lightbox-image"
           sizes={imageSizes.lightbox}
           style={{
-            maxWidth: '100%',
-            maxHeight: '90vh',
-            width: 'auto',
-            height: 'auto',
             objectFit: 'contain',
             opacity: isImageLoading ? 0 : 1,
             transition: 'opacity 0.3s ease',
+            boxShadow: '0 2px 16px rgba(0,0,0,0.7)',
           }}
           onLoad={() => setIsImageLoading(false)}
           onLoadingComplete={() => setIsImageLoading(false)}
