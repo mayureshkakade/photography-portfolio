@@ -28,7 +28,7 @@ export interface GoogleDriveMimeFilterOptions {
   mimeTypeFilter?: string;
 }
 
-export interface CarouselImage {
+export interface AppImageData {
   id: string;
   url: string;
   name: string;

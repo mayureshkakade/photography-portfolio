@@ -1,7 +1,7 @@
 import {
   AlbumData,
   GoogleDriveFile,
-  CarouselImage,
+  AppImageData,
   GoogleDriveMimeFilterOptions,
 } from '@/components/types';
 
@@ -74,7 +74,7 @@ async function fetchGoogleDriveFilesFromFolder(
 function mapDriveFilesToImages(
   files: GoogleDriveFile[],
   size: ImageSize = 'large'
-): CarouselImage[] {
+): AppImageData[] {
   return files.map((file) => ({
     id: file.id,
     url: getOptimizedGoogleDriveUrl(file.id, size),
@@ -90,7 +90,7 @@ function mapDriveFilesToImages(
 export const fetchGoogleDriveCarouselImages = async (
   folderId: string,
   apiKey: string
-): Promise<Array<{ id: string; url: string; name: string }>> => {
+): Promise<Array<AppImageData>> => {
   const files = await fetchGoogleDriveFilesFromFolder(folderId, apiKey, {
     mimeTypeFilter: 'image/',
   });
