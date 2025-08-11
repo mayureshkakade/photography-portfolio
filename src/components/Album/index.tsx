@@ -12,10 +12,8 @@ import {
 } from '@/lib/google-drive-image';
 
 export default function Album({
-  name: title,
-  thumbnail,
+  thumbnailUrl: thumbnail,
   displayName,
-  count: imageCount,
   id,
 }: AlbumData) {
   // Extract file ID from Google Drive URL for optimization
@@ -43,9 +41,7 @@ export default function Album({
             pathname: '/gallery',
             query: {
               id,
-              currentCategory: title,
               displayName: displayName,
-              imageCount: imageCount,
             },
           }}
         >
@@ -73,9 +69,7 @@ export default function Album({
             pathname: '/gallery',
             query: {
               id,
-              currentCategory: title,
               displayName: displayName,
-              imageCount: imageCount,
             },
           }}
         >

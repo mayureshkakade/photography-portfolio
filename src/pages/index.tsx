@@ -1,19 +1,18 @@
 import Home from '@/components/Home';
-import { CAROUSEL_FOLDER_ID, getAlbums } from '@/components/Home/helper';
+import {
+  CAROUSEL_FOLDER_ID,
+  INSTAGRAM_FOLDER_ID,
+  getAlbums,
+} from '@/components/Home/helper';
 import { fetchAllAlbumsDetails } from '@/lib/google-drive-image';
-import { AlbumData } from '@/components/types';
+import { AlbumData, AppImageData } from '@/components/types';
 import { GetServerSideProps } from 'next';
-import { fetchGoogleDriveCarouselImages } from '@/lib/google-drive-image';
-
-interface CarouselImage {
-  id: string;
-  url: string;
-  name: string;
-}
+import { fetchGoogleDriveImages } from '@/lib/google-drive-image';
 
 interface HomePageProps {
   albums: AlbumData[];
-  carouselImages: CarouselImage[];
+  carouselImages: AppImageData[];
+  instagramImages: AppImageData[];
 }
 
 export const getServerSideProps: GetServerSideProps<
@@ -21,17 +20,19 @@ export const getServerSideProps: GetServerSideProps<
 > = async () => {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY;
-    const staticAlbums = getAlbums();
-    let albums = staticAlbums;
-    let carouselImages: CarouselImage[] = [];
+    let albums: AlbumData[] = [];
+    let carouselImages: AppImageData[] = [];
+    let instagramImages: AppImageData[] = [];
 
     if (API_KEY) {
       try {
-        // Fetch album details from Google Drive for each album
-        albums = await fetchAllAlbumsDetails(staticAlbums, API_KEY);
-        // Fetch Carousel images from specific Google Drive folder
-        carouselImages = await fetchGoogleDriveCarouselImages(
+        albums = await fetchAllAlbumsDetails(getAlbums(), API_KEY);
+        carouselImages = await fetchGoogleDriveImages(
           CAROUSEL_FOLDER_ID,
+          API_KEY
+        );
+        instagramImages = await fetchGoogleDriveImages(
+          INSTAGRAM_FOLDER_ID,
           API_KEY
         );
       } catch (error) {
@@ -47,19 +48,31 @@ export const getServerSideProps: GetServerSideProps<
       props: {
         albums,
         carouselImages,
+        instagramImages,
       },
     };
   } catch (error) {
     console.error('Error in getServerSideProps:', error);
     return {
       props: {
-        albums: getAlbums(),
+        albums: [],
         carouselImages: [],
+        instagramImages: [],
       },
     };
   }
 };
 
-export default function HomePage({ albums, carouselImages }: HomePageProps) {
-  return <Home albums={albums} carouselImages={carouselImages} />;
+export default function HomePage({
+  albums,
+  carouselImages,
+  instagramImages,
+}: HomePageProps) {
+  return (
+    <Home
+      albums={albums}
+      carouselImages={carouselImages}
+      instagramImages={instagramImages}
+    />
+  );
 }

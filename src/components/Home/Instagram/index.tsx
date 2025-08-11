@@ -1,9 +1,19 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { getInstagramSectionImages } from '../helper';
+import { AppImageData } from '@/components/types';
+import {
+  getBlurPlaceholder,
+  imageDimensions,
+  imageSizes,
+} from '@/lib/google-drive-image';
 
-const InstagramImages: FC = () => {
-  const images = getInstagramSectionImages();
+interface InstagramSectionProps {
+  instagramImages: AppImageData[];
+}
+
+const InstagramImages: FC<InstagramSectionProps> = ({
+  instagramImages: images,
+}) => {
   return (
     <>
       {images.map((image) => {
@@ -19,11 +29,18 @@ const InstagramImages: FC = () => {
             >
               <Image
                 alt="instagram wedding photos"
-                src={image.image}
-                width={1000}
-                height={1000}
-                style={{ width: '100%', height: 'auto' }}
-                unoptimized
+                src={image.url}
+                width={imageDimensions.thumbnail.width}
+                height={imageDimensions.thumbnail.height}
+                sizes={imageSizes.thumbnail}
+                placeholder="blur"
+                blurDataURL={getBlurPlaceholder()}
+                style={{
+                  aspectRatio: '1 / 1',
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'cover',
+                }}
               />
             </a>
             <div className="ovrelay">
@@ -42,7 +59,7 @@ const InstagramImages: FC = () => {
   );
 };
 
-const InstagramSection: FC = () => {
+const InstagramSection: FC<InstagramSectionProps> = ({ instagramImages }) => {
   return (
     <>
       <div className="instagram_text">
@@ -59,7 +76,7 @@ const InstagramSection: FC = () => {
       </div>
 
       <div className="instragram_area">
-        <InstagramImages />
+        <InstagramImages instagramImages={instagramImages.slice(0, 6)} />
       </div>
     </>
   );

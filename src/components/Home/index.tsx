@@ -6,14 +6,15 @@ import { FC } from 'react';
 import FilmPlayer from './FilmPlayer';
 import InstagramSection from './Instagram';
 import { getFilmsData } from '../Films/helper';
-import { AlbumData, CarouselImage } from '../types';
+import { AlbumData, AppImageData } from '../types';
 
 interface HomeProps {
   albums: AlbumData[];
-  carouselImages: CarouselImage[];
+  carouselImages: AppImageData[];
+  instagramImages: AppImageData[];
 }
 
-const Home: FC<HomeProps> = ({ albums, carouselImages }) => {
+const Home: FC<HomeProps> = ({ albums, carouselImages, instagramImages }) => {
   return (
     <>
       <Carousel carouselImages={carouselImages} />
@@ -22,7 +23,7 @@ const Home: FC<HomeProps> = ({ albums, carouselImages }) => {
       <Info />
       <FilmPlayer filmData={getFilmsData()[0]} />
       <Testimonials />
-      <InstagramSection />
+      <InstagramSection instagramImages={instagramImages} />
     </>
   );
 };

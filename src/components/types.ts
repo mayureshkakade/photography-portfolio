@@ -9,10 +9,8 @@ export interface HomePageData {
 
 export interface AlbumData {
   id: string;
-  name: string;
   displayName: string;
-  thumbnail: string;
-  count: number;
+  thumbnailUrl: string;
   driveFiles: GoogleDriveFile[];
 }
 
@@ -30,7 +28,7 @@ export interface GoogleDriveMimeFilterOptions {
   mimeTypeFilter?: string;
 }
 
-export interface CarouselImage {
+export interface AppImageData {
   id: string;
   url: string;
   name: string;

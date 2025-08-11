@@ -4,11 +4,11 @@ import { FC, useState } from 'react';
 
 import Image from 'next/image';
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
-import { CarouselImage } from '@/components/types';
+import { AppImageData } from '@/components/types';
 import { imageSizes } from '@/lib/google-drive-image';
 
 interface CarouselProps {
-  carouselImages: CarouselImage[];
+  carouselImages: AppImageData[];
 }
 
 export const Carousel: FC<CarouselProps> = ({ carouselImages: images }) => {
