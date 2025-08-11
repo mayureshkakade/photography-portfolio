@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-
 import Image from 'next/image';
-import styled from 'styled-components';
+
 import {
   getBlurPlaceholder,
   imageDimensions,
@@ -50,19 +49,6 @@ const FAQAnswerStyle = {
   fontWeight: 'normal',
   color: 'black',
 };
-
-//Styled Component
-const LineStyleDiv = styled.div`
-  @media (min-width: 48em) {
-    width: 1px;
-    height: 80%;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.14);
-  }
-`;
 
 const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
   return (
@@ -211,10 +197,10 @@ const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
       <div>
         <div className="container" style={{ marginBottom: '80px' }}>
           <div className="row" style={{ position: 'relative' }}>
-            <LineStyleDiv
-              className="middle_line"
+            <div
+              className="middle_line about-page-divider"
               style={{ marginTop: '35px', width: '1px' }}
-            ></LineStyleDiv>
+            ></div>
             <div style={{ paddingBottom: '80px' }} className="col-lg-12">
               <h2
                 style={{ ...H2TitleStyle, textTransform: 'uppercase' }}

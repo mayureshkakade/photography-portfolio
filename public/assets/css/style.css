@@ -7148,3 +7148,15 @@ h6 {
     height: auto;
   }
 }
+
+@media (min-width: 48em) {
+  .about-page-divider {
+    width: 1px;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.14);
+  }
+}
