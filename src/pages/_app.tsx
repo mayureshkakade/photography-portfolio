@@ -5,6 +5,7 @@ import { pageDescription, pageTitle } from '@/constants';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -22,6 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Analytics />
     </>
   );
 }
