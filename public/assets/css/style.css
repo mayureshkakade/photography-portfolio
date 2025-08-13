@@ -7093,13 +7093,13 @@ h6 {
 }
 
 .my-masonry-grid_column {
-  padding-left: 15px; /* gutter size */
+  padding-left: 6px; /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div {
-  margin-bottom: 15px; /* space between items vertically */
+  margin-bottom: 6px; /* space between items vertically */
   break-inside: avoid; /* Prevents breaking inside items */
   page-break-inside: avoid; /* For better browser support */
   overflow: hidden;
@@ -7122,11 +7122,11 @@ h6 {
   }
 
   .my-masonry-grid_column {
-    padding-left: 10px;
+    padding-left: 6px;
   }
 
   .my-masonry-grid_column > div {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 }
 
@@ -7141,11 +7141,6 @@ h6 {
 
   .my-masonry-grid_column > div {
     margin-bottom: 8px;
-  }
-
-  .lightbox-image {
-    width: auto;
-    height: auto;
   }
 }
 

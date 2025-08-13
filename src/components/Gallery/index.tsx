@@ -21,10 +21,10 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
   const coverImage = getCoverImage(images);
   const galleryImages = getGalleryImages(images);
   const breakpointColumnsObj = {
-    default: 2,
-    1100: 2,
-    700: 2,
-    500: 1,
+    default: 4,
+    1100: 4,
+    700: 4,
+    500: 2,
   };
 
   const openLightbox = (index: number) => {
@@ -50,32 +50,77 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
 
   return (
     <React.Fragment>
-      <div className="padding_top">
+      <div
+        style={{
+          position: 'relative',
+          width: '100%',
+          height: '100vh',
+          overflow: 'hidden',
+        }}
+      >
         <Image
-          style={{
-            width: '100%',
-            height: 'auto',
-            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
-            objectFit: 'cover',
-          }}
           alt="cover"
           src={
             coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'full') : ''
           }
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
-          sizes={imageSizes.cover}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+          quality={100}
+          priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
-          priority
-          quality={100}
         />
+
+        <button
+          onClick={() => {
+            const galleryElement = document.getElementById('masonry-gallery');
+            if (galleryElement) {
+              galleryElement.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}
+          style={{
+            position: 'absolute',
+            bottom: '40px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            border: '2px solid rgba(255, 255, 255, 0.8)',
+            borderRadius: '25px',
+            padding: '12px 24px',
+            color: 'white',
+            fontSize: '16px',
+            fontWeight: '600',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            backdropFilter: 'blur(4px)',
+            zIndex: 10,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 1)';
+            e.currentTarget.style.transform = 'translateX(-50%) scale(1.05)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
+            e.currentTarget.style.transform = 'translateX(-50%) scale(1)';
+          }}
+        >
+          View Gallery
+        </button>
       </div>
       <Masonry
+        id="masonry-gallery"
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
-        style={{ padding: '6% 8% 8%' }}
+        style={{ padding: '6% 5% 5%' }}
       >
         {galleryImages.map((image, index) => (
           <div

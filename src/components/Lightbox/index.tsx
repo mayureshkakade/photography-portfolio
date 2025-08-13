@@ -6,6 +6,7 @@ import {
   imageDimensions,
 } from '@/lib/google-drive-image';
 import Spinner from '@/components/Spinner';
+import styles from './Lightbox.module.css';
 
 interface GalleryImage {
   id: string;
@@ -222,9 +223,13 @@ export default function Lightbox({
       {/* Image container */}
       <div
         style={{
-          maxWidth: '100%',
-          maxHeight: '100%',
+          maxWidth: '90%',
+          maxHeight: '90%',
           position: 'relative',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -236,13 +241,10 @@ export default function Lightbox({
           alt={currentImage.name}
           width={imageDimensions.lightbox.width}
           height={imageDimensions.lightbox.height}
-          className="lightbox-image"
+          className={styles.lightboxImage}
           sizes={imageSizes.lightbox}
           style={{
-            objectFit: 'contain',
             opacity: isImageLoading ? 0 : 1,
-            transition: 'opacity 0.3s ease',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.7)',
           }}
           onLoad={() => setIsImageLoading(false)}
           onLoadingComplete={() => setIsImageLoading(false)}

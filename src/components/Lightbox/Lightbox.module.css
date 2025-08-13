@@ -1,0 +1,40 @@
+.lightboxImage {
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
+  width: auto;
+  height: auto;
+}
+
+/* Large desktop/wide monitors */
+@media (min-width: 1440px) {
+  .lightboxImage {
+    max-width: 80vw;
+    max-height: 90vh;
+  }
+}
+
+/* Laptops and smaller desktops */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .lightboxImage {
+    max-width: 70vw;
+    max-height: 80vh;
+  }
+}
+
+/* Tablets */
+@media (min-width: 480px) and (max-width: 767px) {
+  .lightboxImage {
+    max-width: 85vw;
+    max-height: 75vh;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 479px) {
+  .lightboxImage {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
+}
+
