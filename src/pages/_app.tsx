@@ -1,4 +1,5 @@
 import '../../public/assets/css/style.css';
+import '../../public/assets/css/slicknav.css';
 
 import { pageDescription, pageTitle } from '@/constants';
 
@@ -17,12 +18,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Script src="https://code.jquery.com/jquery-1.12.4.min.js"></Script>
-      <Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></Script>
-      <Script src="assets/js/jquery.slicknav.min.js"></Script>
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <Script src="assets/js/jquery.slicknav.min.js"></Script>
+      <Script src="assets/js/main.js" />
       <Analytics />
     </>
   );
