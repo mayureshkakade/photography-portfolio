@@ -9,6 +9,7 @@ import {
   imageSizes,
   imageDimensions,
 } from '@/lib/google-drive-image';
+import styles from './Gallery.module.css';
 
 interface GalleryLayoutProps {
   images: GalleryImage[];
@@ -50,14 +51,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
 
   return (
     <React.Fragment>
-      <div
-        style={{
-          position: 'relative',
-          width: '100%',
-          height: '100vh',
-          overflow: 'hidden',
-        }}
-      >
+      <div className={styles.coverContainer}>
         <Image
           alt="cover"
           src={
@@ -66,11 +60,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
           sizes="100vw"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-          }}
+          className={styles.coverImage}
           quality={100}
           priority
           placeholder="blur"
@@ -84,33 +74,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               galleryElement.scrollIntoView({ behavior: 'smooth' });
             }
           }}
-          style={{
-            position: 'absolute',
-            bottom: '40px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            border: '2px solid rgba(255, 255, 255, 0.8)',
-            borderRadius: '25px',
-            padding: '12px 24px',
-            color: 'white',
-            fontSize: '16px',
-            fontWeight: '600',
-            cursor: 'pointer',
-            transition: 'all 0.3s ease',
-            backdropFilter: 'blur(4px)',
-            zIndex: 10,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 1)';
-            e.currentTarget.style.transform = 'translateX(-50%) scale(1.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
-            e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.8)';
-            e.currentTarget.style.transform = 'translateX(-50%) scale(1)';
-          }}
+          className={styles.viewGalleryButton}
         >
           View Gallery
         </button>
@@ -125,9 +89,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
         {galleryImages.map((image, index) => (
           <div
             key={image.id}
-            style={{
-              cursor: 'pointer',
-            }}
+            className={styles.galleryImageContainer}
             onClick={() => openLightbox(index)}
           >
             <Image
@@ -136,10 +98,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               width={imageDimensions.gallery.width}
               height={imageDimensions.gallery.height}
               sizes={imageSizes.gallery}
-              style={{
-                width: '100%',
-                height: 'auto',
-              }}
+              className={styles.galleryImage}
               placeholder="blur"
               blurDataURL={getBlurPlaceholder()}
               loading="lazy"
