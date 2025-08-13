@@ -7,16 +7,14 @@ import {
   fetchGoogleDriveImages,
 } from '@/lib/google-drive-image';
 import { AlbumData, AppImageData } from '@/components/types';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 
 interface GalleryAlbumsProps {
   albums: AlbumData[];
   carouselImages: AppImageData[];
 }
 
-export const getServerSideProps: GetServerSideProps<
-  GalleryAlbumsProps
-> = async () => {
+export const getStaticProps: GetStaticProps<GalleryAlbumsProps> = async () => {
   try {
     const API_KEY = process.env.GOOGLE_API_KEY;
     let albums: AlbumData[] = [];
@@ -45,6 +43,7 @@ export const getServerSideProps: GetServerSideProps<
         albums,
         carouselImages,
       },
+      revalidate: 30, // ISR: Revalidate every 30 secs
     };
   } catch (error) {
     console.error('Error in getServerSideProps:', error);

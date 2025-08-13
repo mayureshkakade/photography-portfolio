@@ -59,16 +59,16 @@ const Header: React.FC = () => {
                         </Link>
                       </li>
                       <li>
-                        <a href="albums">Albums</a>
+                        <Link href="/albums">Albums</Link>
                       </li>
                       <li>
-                        <a href="films">Films</a>
+                        <Link href="/films">Films</Link>
                       </li>
                       <li>
-                        <a href="about">About us</a>
+                        <Link href="/about">About us</Link>
                       </li>
                       <li>
-                        <a href="contact">Contact</a>
+                        <Link href="/contact">Contact</Link>
                       </li>
 
                       {!isMobileView ? (

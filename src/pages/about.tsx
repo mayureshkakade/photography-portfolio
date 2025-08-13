@@ -2,15 +2,13 @@ import AboutUs from '@/components/AboutUs';
 import { ABOUT_FOLDER_ID } from '@/components/Home/helper';
 import { fetchSingleCoverImage } from '@/lib/google-drive-image';
 import { AppImageData } from '@/components/types';
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 
 interface AboutPageProps {
   coverImage: AppImageData;
 }
 
-export const getServerSideProps: GetServerSideProps<
-  AboutPageProps
-> = async () => {
+export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   const API_KEY = process.env.GOOGLE_API_KEY;
   let coverImage: AppImageData = {
     id: '',
@@ -33,6 +31,7 @@ export const getServerSideProps: GetServerSideProps<
     props: {
       coverImage,
     },
+    revalidate: 30, // ISR: Revalidate every 30 seconds
   };
 };
 
