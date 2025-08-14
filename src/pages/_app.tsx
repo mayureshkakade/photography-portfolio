@@ -1,5 +1,4 @@
 import '../../public/assets/css/style.css';
-import '../../public/assets/css/slicknav.css';
 
 import { pageDescription, pageTitle } from '@/constants';
 

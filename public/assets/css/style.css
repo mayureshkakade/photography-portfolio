@@ -802,7 +802,7 @@ h3 {
 
 @media (max-width: 767px) {
   /* line 4, ../../Arafath/CL/CL October/215. Photography/HTML/scss/_slick-nav.scss */
-  .mobile_menu {
+  .header-area .mobile_menu {
     position: absolute;
     right: 0px;
     width: 100%;
@@ -6591,13 +6591,14 @@ h6 {
     padding-top: 7%;
   }
 
-  .slicknav_nav a {
+  .slicknav_menu .slicknav_nav a {
     font-size: 1.4em;
     font-weight: 500;
     color: #000;
     text-transform: capitalize;
   }
-  .slicknav_icon-bar {
+
+  .slicknav_icon .slicknav_icon-bar {
     background-color: black !important;
   }
 
@@ -6820,7 +6821,7 @@ h6 {
     padding-top: 7%;
   }
 
-  .slicknav_nav a {
+  .slicknav_menu .slicknav_nav a {
     font-size: 1.4em;
     font-weight: 500;
     color: #000;
@@ -6834,7 +6835,7 @@ h6 {
     z-index: 99;
   }
 
-  .slicknav_icon-bar {
+  .slicknav_icon .slicknav_icon-bar {
     background-color: black !important;
   }
 
