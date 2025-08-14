@@ -1,0 +1,52 @@
+.carouselContainer {
+  width: 100%;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.carouselImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 767px) {
+  .carouselContainer,
+  .carouselImageWrapper {
+    height: 35vh;
+  }
+
+  .carouselContainer {
+    margin-top: 86px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* iPad portrait */
+  .carouselContainer,
+  .carouselImageWrapper {
+    height: 35vh;
+  }
+
+  .carouselContainer {
+    margin-top: 86px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* iPad landscape */
+  .carouselContainer,
+  .carouselImageWrapper {
+    height: 100vh;
+  }
+}

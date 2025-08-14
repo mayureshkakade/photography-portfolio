@@ -90,7 +90,7 @@ const ContactUs: FC<ContactUsProps> = ({ coverImage }) => {
           style={{
             width: '100%',
             height: 'auto',
-            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            aspectRatio: `4 / 2`,
             objectFit: 'cover',
           }}
           alt="Wedding Photo Banner"

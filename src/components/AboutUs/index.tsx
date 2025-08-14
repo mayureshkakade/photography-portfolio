@@ -58,7 +58,7 @@ const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
           style={{
             width: '100%',
             height: 'auto',
-            aspectRatio: `${imageDimensions.cover.width} / ${imageDimensions.cover.height}`,
+            aspectRatio: `4 / 2`,
             objectFit: 'cover',
           }}
           alt="Wedding Photo Banner"
@@ -139,6 +139,7 @@ const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
                   width: '100%',
                   height: '100%',
                   objectPosition: 'center',
+                  objectFit: 'cover',
                 }}
                 unoptimized
               />

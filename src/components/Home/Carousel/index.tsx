@@ -1,11 +1,12 @@
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import styles from './Carousel.module.css';
 
 import { FC, useState } from 'react';
 
 import Image from 'next/image';
 import { Carousel as ResponsiveCarousel } from 'react-responsive-carousel';
 import { AppImageData } from '@/components/types';
-import { imageSizes } from '@/lib/google-drive-image';
+import { getBlurPlaceholder, imageDimensions } from '@/lib/google-drive-image';
 
 interface CarouselProps {
   carouselImages: AppImageData[];
@@ -44,13 +45,7 @@ export const Carousel: FC<CarouselProps> = ({ carouselImages: images }) => {
   };
 
   return (
-    <div
-      className="padding_top"
-      style={{
-        marginLeft: 'auto',
-        marginRight: 'auto',
-      }}
-    >
+    <div className={styles.carouselContainer}>
       <div onClick={prev} className="my-prev-arrow">
         <i
           className="fa fa-angle-left"
@@ -79,14 +74,16 @@ export const Carousel: FC<CarouselProps> = ({ carouselImages: images }) => {
       >
         {images.map((item) => {
           return (
-            <div key={item.id}>
+            <div key={item.id} className={styles.carouselImageWrapper}>
               <Image
                 alt="Wedding Photograph"
                 src={item.url}
-                width={1000}
-                height={1000}
-                sizes={imageSizes.cover}
-                style={{ width: '100%', height: 'auto' }}
+                width={imageDimensions.cover.width}
+                height={imageDimensions.cover.height}
+                sizes="100vw"
+                className={styles.carouselImage}
+                placeholder="blur"
+                blurDataURL={getBlurPlaceholder()}
                 quality={100}
                 priority
               />
