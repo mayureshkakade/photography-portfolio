@@ -3,7 +3,7 @@ import classes from './styles/index.module.css';
 
 const Custom404: React.FC = () => {
   return (
-    <div className={classes.notFoundContainer}>
+    <div id="not-found-container" className={classes.notFoundContainer}>
       <div className={classes.notFoundContent}>
         <h2>404</h2>
         <h4>Oops! Page not found</h4>

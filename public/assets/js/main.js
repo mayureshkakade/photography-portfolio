@@ -13,26 +13,16 @@
   });
 
   if (window.location.href.search('404') !== -1) {
-    var container = document.getElementsByClassName('not-found-container');
+    var container = document.getElementById('not-found-container');
     window.onmousemove = function (e) {
       var x = -e.clientX / 5;
       var y = -e.clientY / 5;
-      container[0].style.backgroundPositionX = x + 'px';
-      container[0].style.backgroundPositionY = y + 'px';
+      container.style.backgroundPositionX = x + 'px';
+      container.style.backgroundPositionY = y + 'px';
     };
   }
 
-  $(document).ready(function () {
-    // mobile_menu
-    var menu = $('ul#navigation');
-    if (menu.length && menu.slicknav) {
-      menu.slicknav({
-        prependTo: '.mobile_menu',
-        closedSymbol: '+',
-        openedSymbol: '-',
-      });
-    }
-
+  $(window).on('load', function () {
     //for menu active class
     $('.portfolio-menu button').on('click', function (event) {
       $(this).siblings('.active').removeClass('active');

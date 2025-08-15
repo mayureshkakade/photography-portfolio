@@ -21,11 +21,24 @@ const Header: React.FC = () => {
 
   const logoPath = isMobileView || !!headerColor ? '' : brandLogo;
 
+  const initializeSlickNav = () => {
+    if (window.jQuery) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
+      window.jQuery('ul#navigation').slicknav({
+        prependTo: '.mobile_menu',
+        closedSymbol: '+',
+        openedSymbol: '-',
+      });
+    }
+  };
+
   return (
     <>
       <Script
         src="assets/js/jquery.slicknav.min.js"
         strategy="afterInteractive"
+        onLoad={initializeSlickNav}
       ></Script>
       <header>
         <div className="header-area ">
