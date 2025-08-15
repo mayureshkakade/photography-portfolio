@@ -1,3 +1,5 @@
+export type Nullable<T> = T | null;
+
 export type HomeCarouselData = {
   totalImages: number;
   baseDir: string;
@@ -36,4 +38,14 @@ export interface AppImageData {
 
 export interface GoogleDriveResponse {
   files: GoogleDriveFile[];
+}
+
+export interface FilmItem {
+  url: string;
+  imageName: string;
+  thumbnailUrl: string;
+}
+
+export interface FilmsPageProps {
+  films: FilmItem[];
 }

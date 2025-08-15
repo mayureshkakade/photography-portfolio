@@ -1,49 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import ReactPlayer from 'react-player';
 import { useRouter } from 'next/router';
+import { FilmItem } from '@/components/types';
+import Image from 'next/image';
 
 interface FilmPlayerProps {
-  filmData: {
-    id: number;
-    url: string;
-    lightImg: string;
-    lightImgLazy: string;
-  };
+  filmData: FilmItem;
 }
 
-export default function FilmPlayer({ filmData }: Readonly<FilmPlayerProps>) {
+export default function FilmPlayer({ filmData }: FilmPlayerProps) {
   const { pathname } = useRouter();
-
+  const { url, thumbnailUrl, imageName } = filmData;
   // Determine the css class based on current page location
   const isHomePage = pathname === '/home' || pathname === '/';
-
-  // Begin polling for the required lazy images tag and observe the images for intersection
-  useEffect(() => {
-    if (isHomePage) {
-      const reactPlayerImagePoll = setInterval(() => {
-        if (document.querySelectorAll('.react-player__preview').length > 0) {
-          clearInterval(reactPlayerImagePoll);
-          const observer = new IntersectionObserver((entry, imgObserver) => {
-            entry.forEach((element) => {
-              if (element.isIntersecting) {
-                const lazyImage = element.target as HTMLImageElement;
-                lazyImage.style.backgroundImage = `url("${filmData.lightImg}")`;
-                imgObserver.unobserve(lazyImage);
-              }
-            });
-          });
-          const elementArray = document.querySelectorAll(
-            '.react-player__preview'
-          );
-          elementArray.forEach((element) => {
-            observer.observe(element);
-          });
-        }
-      }, 200);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isHomePage, filmData.lightImg]);
 
   return (
     <div
@@ -53,17 +23,25 @@ export default function FilmPlayer({ filmData }: Readonly<FilmPlayerProps>) {
       <div style={{ margin: '0 auto', position: 'relative' }}>
         <div className={isHomePage ? 'film-container' : 'film'}>
           <ReactPlayer
-            url={`"${filmData.url}"`}
+            src={url}
+            autoPlay={true}
             volume={1}
             width="100%"
             className="film-player"
             height="34.9375rem"
             controls={true}
+            muted={true}
             controlsList="nodownload"
             light={
-              isHomePage
-                ? `"${filmData.lightImgLazy}"`
-                : `"${filmData.lightImg}"`
+              <Image
+                src={thumbnailUrl}
+                alt={imageName}
+                width={1000}
+                height={1000}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                quality={100}
+                priority
+              />
             }
           />
         </div>

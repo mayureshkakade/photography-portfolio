@@ -5,23 +5,28 @@ import { Carousel } from './Carousel';
 import { FC } from 'react';
 import FilmPlayer from './FilmPlayer';
 import InstagramSection from './Instagram';
-import { getFilmsData } from '../Films/helper';
-import { AlbumData, AppImageData } from '../types';
+import { AlbumData, AppImageData, FilmItem, Nullable } from '../types';
 
 interface HomeProps {
   albums: AlbumData[];
   carouselImages: AppImageData[];
   instagramImages: AppImageData[];
+  filmData: Nullable<FilmItem>;
 }
 
-const Home: FC<HomeProps> = ({ albums, carouselImages, instagramImages }) => {
+const Home: FC<HomeProps> = ({
+  albums,
+  carouselImages,
+  instagramImages,
+  filmData,
+}) => {
   return (
     <>
       <Carousel carouselImages={carouselImages} />
       <Heading />
       <Albums albums={albums.slice(0, 4)} parentFeature="home-page" />
       <Info />
-      <FilmPlayer filmData={getFilmsData()[0]} />
+      {!!filmData && <FilmPlayer filmData={filmData} />}
       <Testimonials />
       <InstagramSection instagramImages={instagramImages} />
     </>

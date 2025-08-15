@@ -1,11 +1,17 @@
 import Home from '@/components/Home';
 import {
   CAROUSEL_FOLDER_ID,
+  FILMS_FOLDER_ID,
   INSTAGRAM_FOLDER_ID,
   getAlbums,
 } from '@/components/Home/helper';
-import { fetchAllAlbumsDetails } from '@/lib/google-drive-image';
-import { AlbumData, AppImageData } from '@/components/types';
+import { fetchAllAlbumsDetails, fetchFilmData } from '@/lib/google-drive-image';
+import {
+  AlbumData,
+  AppImageData,
+  FilmItem,
+  Nullable,
+} from '@/components/types';
 import { GetStaticProps } from 'next';
 import { fetchGoogleDriveImages } from '@/lib/google-drive-image';
 
@@ -13,6 +19,7 @@ interface HomePageProps {
   albums: AlbumData[];
   carouselImages: AppImageData[];
   instagramImages: AppImageData[];
+  filmData: Nullable<FilmItem>;
 }
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
@@ -21,6 +28,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     let albums: AlbumData[] = [];
     let carouselImages: AppImageData[] = [];
     let instagramImages: AppImageData[] = [];
+    let filmData: Nullable<FilmItem> = null;
 
     if (API_KEY) {
       try {
@@ -33,6 +41,10 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
           INSTAGRAM_FOLDER_ID,
           API_KEY
         );
+
+        const films = await fetchFilmData(FILMS_FOLDER_ID, API_KEY);
+        filmData =
+          films.find((film) => film.imageName.toLowerCase() === 'home') ?? null;
       } catch (error) {
         console.error('Error fetching data from Google Drive:', error);
       }
@@ -47,6 +59,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
         albums,
         carouselImages,
         instagramImages,
+        filmData,
       },
       revalidate: 30, // ISR: Revalidate every 30 secs
     };
@@ -57,6 +70,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
         albums: [],
         carouselImages: [],
         instagramImages: [],
+        filmData: null,
       },
     };
   }
@@ -66,12 +80,14 @@ export default function HomePage({
   albums,
   carouselImages,
   instagramImages,
+  filmData,
 }: HomePageProps) {
   return (
     <Home
       albums={albums}
       carouselImages={carouselImages}
       instagramImages={instagramImages}
+      filmData={filmData}
     />
   );
 }

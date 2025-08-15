@@ -6418,6 +6418,7 @@ h6 {
     padding: 0px !important;
   }
 
+  .react-player__preview,
   .film-player {
     height: 13.9375rem !important;
   }
@@ -6726,6 +6727,8 @@ h6 {
   .media_tablet {
     display: inline-flex;
   }
+
+  .react-player__preview,
   .film-player {
     height: 27.9375rem !important;
   }
@@ -6918,6 +6921,7 @@ h6 {
 }
 
 @media only screen and (min-width: 1200px) {
+  .react-player__preview,
   .film-player {
     height: 40.9375rem !important;
   }
@@ -6927,12 +6931,14 @@ h6 {
 }
 
 @media only screen and (min-width: 1400px) {
+  .react-player__preview,
   .film-player {
     height: 42rem !important;
   }
 }
 
 @media only screen and (min-width: 1500px) {
+  .react-player__preview,
   .film-player {
     height: 47rem !important;
   }
@@ -7045,9 +7051,12 @@ h6 {
   padding-bottom: 35px;
 }
 
+.react-player__preview,
 .film-player {
   height: 34.9375rem;
 }
+
+
 
 .about_img {
   height: 25.6125rem;

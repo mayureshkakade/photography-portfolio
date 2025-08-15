@@ -13,6 +13,16 @@ export const getGalleryImages = (images: GalleryImage[]): GalleryImage[] => {
     );
 };
 
-export const getCoverImage = (images: GalleryImage[]): GalleryImage | null => {
-  return images.find((image) => image.name.includes('cover')) || null;
+export const getCoverImage = (
+  images: GalleryImage[],
+  isMobileView = false
+): GalleryImage | null => {
+  console.log({ images });
+  return (
+    images.find((image) =>
+      isMobileView
+        ? image.name.split('.')[0].toLowerCase() === 'mobile-cover'
+        : image.name.split('.')[0].toLowerCase() === 'cover'
+    ) || null
+  );
 };

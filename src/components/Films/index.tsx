@@ -7,10 +7,9 @@ import {
 
 import { FC } from 'react';
 import FilmPlayer from '../Home/FilmPlayer';
-import { getFilmsData } from './helper';
+import { FilmsPageProps } from '../types';
 
-const FilmsPage: FC = () => {
-  const filmsData = getFilmsData();
+const FilmsPage: FC<FilmsPageProps> = ({ films }) => {
   return (
     <>
       <div style={{ textAlign: 'center' }} className="col-lg-12 film_text">
@@ -22,9 +21,9 @@ const FilmsPage: FC = () => {
         </div>
       </div>
       <div className="film_body">
-        {filmsData.map((item) => {
+        {films.map((item) => {
           return (
-            <div className="film_area" key={item.id}>
+            <div className="film_area" key={item.imageName}>
               <FilmPlayer filmData={item} />
             </div>
           );
