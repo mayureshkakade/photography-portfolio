@@ -23,9 +23,7 @@ export const Info: FC = () => {
   return (
     <div style={{ margin: '20px 0px 35px 0px' }}>
       <div className="container">
-        <h2 className="text_header">
-          INDIAN CANDID WEDDING PHOTOGRAPHER & FILMMAKER
-        </h2>
+        <h2 className="text_header">INDIAN WEDDING PHOTOGRAPHER & FILMMAKER</h2>
         <div
           style={{ textAlign: 'center' }}
           className="row align-items-center text_content"

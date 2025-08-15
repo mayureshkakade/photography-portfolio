@@ -16,13 +16,14 @@ const Footer: React.FC = () => {
               </p>
               <p style={{ fontSize: '13px' }}>
                 <a
-                  href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=photuphactory@gmail.com"
+                  href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=omkarkalgudephotography@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: '#ffffffa6' }}
                 >
                   {' '}
-                  <i className="fa fa-envelope mr-2" /> photuphactory@gmail.com{' '}
+                  <i className="fa fa-envelope mr-2" />{' '}
+                  omkarkalgudephotography@gmail.com{' '}
                 </a>
               </p>
 

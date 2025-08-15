@@ -106,7 +106,7 @@ const Header: React.FC = () => {
                             style={{
                               display: 'flex',
                               justifyContent: 'center',
-                              paddingTop: '33%',
+                              paddingTop: '20%',
                               fontSize: '0.9em',
                               marginLeft: '0px',
                             }}

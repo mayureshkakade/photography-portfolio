@@ -261,11 +261,11 @@ const ContactUs: FC<ContactUsProps> = ({ coverImage }) => {
                 <div className="media-body">
                   <h3 style={H3Style}>
                     <a
-                      href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=photuphactory@gmail.com"
+                      href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=omkarkalgudephotography@gmail.com"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      photuphactory@gmail.com
+                      omkarkalgudephotography@gmail.com
                     </a>
                   </h3>
                 </div>

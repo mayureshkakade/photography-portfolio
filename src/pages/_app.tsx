@@ -20,7 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Script src="assets/js/jquery.slicknav.min.js"></Script>
+      <Script
+        src="assets/js/jquery.slicknav.min.js"
+        // strategy="lazyOnload"
+      ></Script>
       <Script src="assets/js/main.js" />
       <Analytics />
     </>
