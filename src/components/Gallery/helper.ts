@@ -17,7 +17,6 @@ export const getCoverImage = (
   images: GalleryImage[],
   isMobileView = false
 ): GalleryImage | null => {
-  console.log({ images });
   return (
     images.find((image) =>
       isMobileView
