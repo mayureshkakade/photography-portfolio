@@ -11,6 +11,7 @@
   .lightboxImage {
     max-width: 80vw;
     max-height: 90vh;
+    width: 80vw;
   }
 }
 
@@ -19,6 +20,7 @@
   .lightboxImage {
     max-width: 70vw;
     max-height: 80vh;
+    width: 70vw;
   }
 }
 
@@ -37,4 +39,3 @@
     max-height: 70vh;
   }
 }
-

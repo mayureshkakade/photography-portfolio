@@ -44,7 +44,7 @@ export const imageSizes = {
 
 export const imageDimensions = {
   gallery: { width: 600, height: 400 },
-  lightbox: { width: 1200, height: 800 },
+  lightbox: { width: 1600, height: 1067 },
   thumbnail: { width: 300, height: 200 },
   cover: { width: 1200, height: 438 },
 };
