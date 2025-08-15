@@ -12,8 +12,6 @@ interface FilmPlayerProps {
 export default function FilmPlayer({ filmData }: FilmPlayerProps) {
   const { pathname } = useRouter();
   const { url, thumbnailUrl, imageName } = filmData;
-  console.log({ filmData });
-
   // Determine the css class based on current page location
   const isHomePage = pathname === '/home' || pathname === '/';
 

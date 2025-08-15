@@ -3,6 +3,7 @@ import {
   GoogleDriveFile,
   AppImageData,
   GoogleDriveMimeFilterOptions,
+  FilmItem,
 } from '@/components/types';
 
 // Export fetchGoogleDriveFilesFromFolder for external use
@@ -93,6 +94,39 @@ export const fetchGoogleDriveImages = async (
     mimeTypeFilter: 'image/',
   });
   return mapDriveFilesToImages(files, size);
+};
+
+export const fetchFilmData = async (
+  folderId: string,
+  apiKey: string
+): Promise<FilmItem[]> => {
+  const files = await fetchGoogleDriveFilesFromFolder(folderId, apiKey);
+  const jsonFile = files.find((f) =>
+    f.name.toLowerCase().includes('films.json')
+  );
+
+  let filmsJson: { url: string; imageName: string }[] = [];
+  if (jsonFile) {
+    const jsonUrl = `https://www.googleapis.com/drive/v3/files/${jsonFile.id}?alt=media&key=${apiKey}`;
+    const res = await fetch(jsonUrl);
+    if (res.ok) {
+      filmsJson = await res.json();
+    }
+  }
+
+  const imageFiles = files.filter(
+    (f) => f.name !== jsonFile?.name && /\.(jpg|jpeg|png|webp)$/i.test(f.name)
+  );
+
+  return filmsJson.map((film) => {
+    const imageFile = imageFiles.find(
+      (img) => img.name.split('.')[0] === film.imageName
+    );
+    const thumbnailUrl = imageFile
+      ? getOptimizedGoogleDriveUrl(imageFile.id, 'full')
+      : '';
+    return { ...film, thumbnailUrl };
+  });
 };
 
 /**
