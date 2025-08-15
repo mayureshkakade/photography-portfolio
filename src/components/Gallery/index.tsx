@@ -22,9 +22,9 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
   const coverImage = getCoverImage(images);
   const galleryImages = getGalleryImages(images);
   const breakpointColumnsObj = {
-    default: 4,
-    1100: 4,
-    700: 4,
+    default: 3,
+    1100: 3,
+    700: 3,
     500: 2,
   };
 

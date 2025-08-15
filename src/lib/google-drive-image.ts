@@ -5,6 +5,9 @@ import {
   GoogleDriveMimeFilterOptions,
 } from '@/components/types';
 
+// Export fetchGoogleDriveFilesFromFolder for external use
+export { fetchGoogleDriveFilesFromFolder };
+
 export type ImageSize = 'thumb' | 'medium' | 'large' | 'full';
 
 /**
