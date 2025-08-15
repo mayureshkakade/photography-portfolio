@@ -14,7 +14,10 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script src="https://code.jquery.com/jquery-1.12.4.min.js"></Script>
+        <Script
+          src="https://code.jquery.com/jquery-1.12.4.min.js"
+          strategy="beforeInteractive"
+        ></Script>
         <Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></Script>
       </body>
     </Html>
