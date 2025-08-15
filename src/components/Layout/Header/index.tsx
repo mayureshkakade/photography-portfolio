@@ -25,7 +25,7 @@ const Header: React.FC = () => {
     if (window.jQuery) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
-      window.jQuery('ul#navigation').slicknav({
+      window.jQuery('ul#navigation')?.slicknav({
         prependTo: '.mobile_menu',
         closedSymbol: '+',
         openedSymbol: '-',
