@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getCoverImage, getGalleryImages } from './helper';
 import Lightbox, { GalleryImage } from '@/components/Lightbox';
 import {
@@ -17,9 +17,10 @@ interface GalleryLayoutProps {
 }
 
 export default function GalleryLayout({ images }: GalleryLayoutProps) {
+  const [isMobileView, setIsMobileView] = useState<boolean>(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const coverImage = getCoverImage(images);
+  const coverImage = getCoverImage(images, isMobileView);
   const galleryImages = getGalleryImages(images);
   const breakpointColumnsObj = {
     default: 3,
@@ -27,6 +28,11 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
     700: 3,
     500: 2,
   };
+
+  useEffect(() => {
+    const isMobileView = window.innerWidth <= 768;
+    setIsMobileView(isMobileView);
+  }, []);
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
