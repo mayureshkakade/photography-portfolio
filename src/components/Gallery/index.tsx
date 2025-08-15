@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Masonry from 'react-masonry-css';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { getCoverImage, getGalleryImages } from './helper';
 import Lightbox, { GalleryImage } from '@/components/Lightbox';
 import {
@@ -17,10 +17,10 @@ interface GalleryLayoutProps {
 }
 
 export default function GalleryLayout({ images }: GalleryLayoutProps) {
-  const [isMobileView, setIsMobileView] = useState<boolean>(false);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const coverImage = getCoverImage(images, isMobileView);
+  const [lightboxOpen, setLightboxOpen] = React.useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+  const coverImageDesktop = getCoverImage(images, false);
+  const coverImageMobile = getCoverImage(images, true);
   const galleryImages = getGalleryImages(images);
   const breakpointColumnsObj = {
     default: 3,
@@ -28,11 +28,6 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
     700: 3,
     500: 2,
   };
-
-  useEffect(() => {
-    const isMobileView = window.innerWidth <= 768;
-    setIsMobileView(isMobileView);
-  }, []);
 
   const openLightbox = (index: number) => {
     setCurrentImageIndex(index);
@@ -58,15 +53,35 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
   return (
     <React.Fragment>
       <div className={styles.coverContainer}>
+        {/* Desktop Cover Image */}
         <Image
-          alt="cover"
+          alt="cover desktop"
           src={
-            coverImage ? getOptimizedGoogleDriveUrl(coverImage.id, 'full') : ''
+            coverImageDesktop
+              ? getOptimizedGoogleDriveUrl(coverImageDesktop.id, 'full')
+              : ''
           }
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
           sizes="100vw"
-          className={styles.coverImage}
+          className={styles.coverImageDesktop}
+          quality={100}
+          priority
+          placeholder="blur"
+          blurDataURL={getBlurPlaceholder()}
+        />
+        {/* Mobile Cover Image */}
+        <Image
+          alt="cover mobile"
+          src={
+            coverImageMobile
+              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'full')
+              : ''
+          }
+          width={imageDimensions.cover.width}
+          height={imageDimensions.cover.height}
+          sizes="100vw"
+          className={styles.coverImageMobile}
           quality={100}
           priority
           placeholder="blur"
