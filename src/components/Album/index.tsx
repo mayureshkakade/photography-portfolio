@@ -9,6 +9,7 @@ import {
   getBlurPlaceholder,
   imageSizes,
   imageDimensions,
+  getFileIdFromUrl,
 } from '@/lib/google-drive-image';
 
 export default function Album({
@@ -17,12 +18,6 @@ export default function Album({
   id,
 }: AlbumData) {
   // Extract file ID from Google Drive URL for optimization
-  const getFileIdFromUrl = (url: string): string => {
-    if (!url) return '';
-    const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    return match ? match[1] : url;
-  };
-
   const fileId = getFileIdFromUrl(thumbnail);
   const optimizedThumbnail = fileId
     ? getOptimizedGoogleDriveUrl(fileId, 'medium')

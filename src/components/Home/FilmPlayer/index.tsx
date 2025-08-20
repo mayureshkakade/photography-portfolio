@@ -4,6 +4,10 @@ import ReactPlayer from 'react-player';
 import { useRouter } from 'next/router';
 import { FilmItem } from '@/components/types';
 import Image from 'next/image';
+import {
+  getFileIdFromUrl,
+  getOptimizedGoogleDriveUrl,
+} from '@/lib/google-drive-image';
 
 interface FilmPlayerProps {
   filmData: FilmItem;
@@ -14,6 +18,10 @@ export default function FilmPlayer({ filmData }: FilmPlayerProps) {
   const { url, thumbnailUrl, imageName } = filmData;
   // Determine the css class based on current page location
   const isHomePage = pathname === '/home' || pathname === '/';
+  const fileId = getFileIdFromUrl(thumbnailUrl);
+  const optimizedThumbnail = fileId
+    ? getOptimizedGoogleDriveUrl(fileId, 'large')
+    : thumbnailUrl;
 
   return (
     <div
@@ -34,13 +42,14 @@ export default function FilmPlayer({ filmData }: FilmPlayerProps) {
             controlsList="nodownload"
             light={
               <Image
-                src={thumbnailUrl}
+                src={optimizedThumbnail}
                 alt={imageName}
                 width={1000}
                 height={1000}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 quality={100}
                 priority
+                unoptimized
               />
             }
           />

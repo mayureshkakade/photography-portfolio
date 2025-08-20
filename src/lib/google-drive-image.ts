@@ -11,6 +11,12 @@ export { fetchGoogleDriveFilesFromFolder };
 
 export type ImageSize = 'thumb' | 'medium' | 'large' | 'full';
 
+export const getFileIdFromUrl = (url: string): string => {
+  if (!url) return '';
+  const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+  return match ? match[1] : url;
+};
+
 /**
  * Generates an optimized Google Drive image URL for a specific size.
  */
