@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<FilmsPageProps> = async () => {
 
   return {
     props: { films },
-    revalidate: 3600, // 1 hour
+    revalidate: 30,
   };
 };
 
