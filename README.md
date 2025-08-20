@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# [Photography Portfolio](https://omkarkalgude.vercel.app/)
+# [Photography Portfolio](https://www.omkarkalgudephotography.com/)
 
 Welcome to the Photography Portfolio project, showcasing the remarkable work of photographer Omkar Kalgude.
 
@@ -13,13 +13,12 @@ Welcome to the Photography Portfolio project, showcasing the remarkable work of 
 This project serves as a comprehensive portfolio for Omkar Kalgude's photography. It utilizes Next.js 13 with server-side rendering for optimal performance and SEO. The tech stack includes React, TypeScript, and Resend client for email functionality.
 <br/>
 <br/>
-Note: This project was originally created as a plain CSR React app and is currently being migrated to Next.js. Old repository: [Photography Portfolio - GitLab](https://gitlab.com/photography-portfolio/photography-portfolio-site)
+Note: This project was originally created as a plain CSR React app and is now migrated to Next.js. Old repository: [Photography Portfolio - GitLab](https://gitlab.com/photography-portfolio/photography-portfolio-site)
 
 ## Features
 
 - **Next.js 13**: Utilizing the pages router.
 - **React & TypeScript**: Powering the frontend with robust and type-safe code.
-- **Intersection Observer**: Enhancing user experience with lazy loading of images.
 - **Bootstrap**: Providing a sleek and responsive design foundation.
 - **Server-side Rendering**: Optimizing SEO and initial load performance.
 - **Husky Pre-commit Hooks**: Enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and linting for code quality.
