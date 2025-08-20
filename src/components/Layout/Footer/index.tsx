@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
               height={40}
             />
           </div>
-          @2020 OMKAR KALGUDE PHOTOGRAPHY
+          @2018 OMKAR KALGUDE PHOTOGRAPHY
         </div>
         <p className="copy_right" style={{ fontSize: '8px' }}>
           Copyright © All rights reserved
@@ -99,6 +99,15 @@ const Footer: React.FC = () => {
             target="_blank"
           >
             Colorlib
+          </a>
+        </p>
+        <p
+          className="copy_right"
+          style={{ fontSize: '8px', lineHeight: '6px' }}
+        >
+          Crafted with ❤️ by{' '}
+          <a href="https://mayuresh.vercel.app/" target="_blank">
+            Mayuresh Kakade
           </a>
         </p>
       </div>
