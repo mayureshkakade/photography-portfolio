@@ -6,7 +6,6 @@ import Lightbox, { GalleryImage } from '@/components/Lightbox';
 import {
   getOptimizedGoogleDriveUrl,
   getBlurPlaceholder,
-  imageSizes,
   imageDimensions,
 } from '@/lib/google-drive-image';
 import styles from './Gallery.module.css';
@@ -118,7 +117,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               alt={image.name}
               width={imageDimensions.gallery.width}
               height={imageDimensions.gallery.height}
-              sizes={imageSizes.gallery}
+              sizes="100vw"
               className={styles.galleryImage}
               placeholder="blur"
               blurDataURL={getBlurPlaceholder()}
