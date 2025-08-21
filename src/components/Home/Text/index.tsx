@@ -56,6 +56,7 @@ const Testimonial: FC<{ author: string; testimonial: string }> = ({
       width={1000}
       height={1000}
       style={{ width: '100%', height: 'auto' }}
+      unoptimized
     />
     <p className="mt2" style={{ fontSize: '14px', textAlign: 'justify' }}>
       {testimonial}

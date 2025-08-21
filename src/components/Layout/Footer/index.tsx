@@ -86,6 +86,7 @@ const Footer: React.FC = () => {
               alt="omkar kalgude photography logo"
               width={40}
               height={40}
+              unoptimized
             />
           </div>
           @2018 OMKAR KALGUDE PHOTOGRAPHY
