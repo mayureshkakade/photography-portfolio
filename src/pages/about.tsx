@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
       coverImage = await fetchSingleCoverImage(
         ABOUT_FOLDER_ID,
         API_KEY,
-        'large'
+        'full'
       );
     } catch (error) {
       console.error('Error fetching AboutUs cover image:', error);

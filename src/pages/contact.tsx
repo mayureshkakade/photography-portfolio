@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<ContactPageProps> = async () => {
         coverImage = await fetchSingleCoverImage(
           CONTACT_FOLDER_ID,
           API_KEY,
-          'large'
+          'full'
         );
       } catch (error) {
         console.error('Error fetching ContactUs cover image:', error);
