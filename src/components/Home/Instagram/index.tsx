@@ -42,7 +42,7 @@ const InstagramImages: FC<InstagramSectionProps> = ({
                   objectFit: 'cover',
                 }}
                 unoptimized
-                quality={85}
+                quality={100}
               />
             </a>
             <div className="ovrelay">

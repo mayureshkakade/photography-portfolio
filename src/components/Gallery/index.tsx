@@ -57,7 +57,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           alt="cover desktop"
           src={
             coverImageDesktop
-              ? getOptimizedGoogleDriveUrl(coverImageDesktop.id, 'large')
+              ? getOptimizedGoogleDriveUrl(coverImageDesktop.id, 'full')
               : ''
           }
           width={imageDimensions.cover.width}
@@ -75,14 +75,14 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           alt="cover mobile"
           src={
             coverImageMobile
-              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'medium')
+              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'large')
               : ''
           }
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
           sizes="100vw"
           className={styles.coverImageMobile}
-          quality={90}
+          quality={100}
           priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
@@ -124,7 +124,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               placeholder="blur"
               blurDataURL={getBlurPlaceholder()}
               loading="lazy"
-              quality={90}
+              quality={100}
               unoptimized
             />
           </div>
