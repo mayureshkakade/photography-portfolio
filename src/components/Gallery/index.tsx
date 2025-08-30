@@ -57,7 +57,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           alt="cover desktop"
           src={
             coverImageDesktop
-              ? getOptimizedGoogleDriveUrl(coverImageDesktop.id, 'full')
+              ? getOptimizedGoogleDriveUrl(coverImageDesktop.id, 'large')
               : ''
           }
           width={imageDimensions.cover.width}
@@ -68,23 +68,25 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
+          unoptimized
         />
         {/* Mobile Cover Image */}
         <Image
           alt="cover mobile"
           src={
             coverImageMobile
-              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'full')
+              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'medium')
               : ''
           }
           width={imageDimensions.cover.width}
           height={imageDimensions.cover.height}
           sizes="100vw"
           className={styles.coverImageMobile}
-          quality={100}
+          quality={90}
           priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
+          unoptimized
         />
 
         <button
@@ -113,7 +115,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
             onClick={() => openLightbox(index)}
           >
             <Image
-              src={getOptimizedGoogleDriveUrl(image.id, 'full')}
+              src={getOptimizedGoogleDriveUrl(image.id, 'large')}
               alt={image.name}
               width={imageDimensions.gallery.width}
               height={imageDimensions.gallery.height}
@@ -122,7 +124,8 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               placeholder="blur"
               blurDataURL={getBlurPlaceholder()}
               loading="lazy"
-              quality={100}
+              quality={90}
+              unoptimized
             />
           </div>
         ))}

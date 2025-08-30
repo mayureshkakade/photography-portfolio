@@ -250,6 +250,7 @@ export default function Lightbox({
           onLoadingComplete={() => setIsImageLoading(false)}
           priority
           quality={100}
+          unoptimized
         />
       </div>
 
@@ -264,6 +265,7 @@ export default function Lightbox({
             sizes={imageSizes.lightbox}
             priority
             quality={100}
+            unoptimized
           />
         </div>
       ))}
