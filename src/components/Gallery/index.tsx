@@ -75,7 +75,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           alt="cover mobile"
           src={
             coverImageMobile
-              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'large')
+              ? getOptimizedGoogleDriveUrl(coverImageMobile.id, 'full')
               : ''
           }
           width={imageDimensions.cover.width}
