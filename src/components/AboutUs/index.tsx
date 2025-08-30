@@ -69,7 +69,7 @@ const AboutUs: FC<AboutUsProps> = ({ coverImage }) => {
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
           priority
-          quality={90}
+          quality={100}
           unoptimized
         />
       </div>
