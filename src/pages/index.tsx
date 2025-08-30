@@ -39,7 +39,8 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
         );
         instagramImages = await fetchGoogleDriveImages(
           INSTAGRAM_FOLDER_ID,
-          API_KEY
+          API_KEY,
+          'medium'
         );
 
         const films = await fetchFilmData(FILMS_FOLDER_ID, API_KEY);

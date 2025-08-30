@@ -68,6 +68,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
+          unoptimized
         />
         {/* Mobile Cover Image */}
         <Image
@@ -85,6 +86,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
           priority
           placeholder="blur"
           blurDataURL={getBlurPlaceholder()}
+          unoptimized
         />
 
         <button
@@ -113,7 +115,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
             onClick={() => openLightbox(index)}
           >
             <Image
-              src={getOptimizedGoogleDriveUrl(image.id, 'full')}
+              src={getOptimizedGoogleDriveUrl(image.id, 'large')}
               alt={image.name}
               width={imageDimensions.gallery.width}
               height={imageDimensions.gallery.height}
@@ -123,6 +125,7 @@ export default function GalleryLayout({ images }: GalleryLayoutProps) {
               blurDataURL={getBlurPlaceholder()}
               loading="lazy"
               quality={100}
+              unoptimized
             />
           </div>
         ))}
