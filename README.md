@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# [Photography Portfolio](https://www.omkarkalgudephotography.com/)
+# Click here to visit the portfolio: [Photography Portfolio](https://www.omkarkalgudephotography.com/)
 
 Welcome to the Photography Portfolio project, showcasing the remarkable work of photographer Omkar Kalgude.
 
@@ -19,6 +19,7 @@ Note: This project was originally created as a plain CSR React app and is now mi
 
 - **Next.js 13**: Utilizing the pages router.
 - **React & TypeScript**: Powering the frontend with robust and type-safe code.
+- **Google Drive API**: Easy management of website photos and videos on the fly.
 - **Bootstrap**: Providing a sleek and responsive design foundation.
 - **Server-side Rendering**: Optimizing SEO and initial load performance.
 - **Husky Pre-commit Hooks**: Enforcing [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) and linting for code quality.
